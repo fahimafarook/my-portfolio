@@ -1,0 +1,424 @@
+@font-face {
+  font-family: 'BebasNeue';
+  src: url('./fonts/BebasNeue.woff2') format('woff2')
+}
+
+.profile-page {
+    height: 100vh;
+    width: auto;
+    background-image: url('./images/fahimabw2.png');
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 1;
+}
+
+.freelancer{
+  width: 30%;
+  background-color: rgb(166, 222, 67);
+  bottom: 5%;
+  position: absolute;
+  right:0;
+  border-radius: 10px 0 0 10px;
+  height: 5%;
+  font-size: xx-large ;
+  font-family: BebasNeue;
+  animation: wave-effect 5s infinite;
+}
+
+@keyframes wave-effect {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+    background-color:rgb(78, 78, 78);
+    color: aliceblue;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
+.scroll-name{
+    position: absolute;
+    font-family: 'Bulevar', sans-serif;
+    color:rgb(220, 193, 154);
+    width: 100%;
+    right: 0;
+    left: 0;
+    bottom: 5%;
+}
+
+.top-left-text{
+    position: absolute;
+    left: 3%;
+    top:5%;
+    color: rgb(231, 228, 219);
+    font-size: 160%;
+}
+
+.locatedAt{
+    animation: sidePopIn-left 2s forwards;
+    border-top: solid 0.5px rgb(123, 120, 120);
+    border-right: solid  0.5px rgb(123, 120, 120);
+    border-bottom: solid  0.5px rgb(123, 120, 120);
+    width:250px;
+    height: 100px;
+    background-color: rgb(30, 29, 29);
+    position: absolute;
+    top: 50%;
+    border-radius: 0 50px 50px 0;
+    color: white;
+    font-size: 120%;
+    text-align: left;
+    align-items: center;
+    padding: 20px 100px 20px 20px;
+    box-sizing: border-box;
+    font-family: 'BebasNeue';
+    
+}
+
+.locatedAt::before{
+    background-color: rgb(91, 89, 89);
+    animation: backgroundChanges 1s infinite;
+    position: absolute;
+    content: "";
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-image: url('./images/earth-svgrepo-com.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    right:5%;
+    top:10%;
+    background: radial-gradient(circle, white 5%, rgb(149, 221, 25))
+}
+
+
+@keyframes backgroundChanges {
+    0% {
+        background: linear-gradient(
+            to bottom,
+            rgb(255, 255, 255),
+            rgb(162, 255, 2)
+    )}
+    
+    50% {
+        background: linear-gradient(
+            to bottom,
+             rgb(162, 255, 2),
+            rgb(255, 255, 255)
+        )
+  } }
+
+.locatedAt::after{
+    position: absolute;
+    content: "";
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-image: url('./images/earth-svgrepo-com.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    right:5%;
+    top:10%;
+}
+
+@keyframes sidePopIn-left {
+  from{
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to{
+    opacity: 1;
+    transform: 0;
+  }
+}
+
+@keyframes sidePopIn-rigth {
+  from{
+    opacity: 0;
+    transform: translateX(+100px);
+  }
+  to{
+    transform: 0;
+    opacity: 0.7;
+  }
+}
+
+
+.name-scroll-parent{
+    display: flex;
+    bottom:5%;
+    position: absolute;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.name-scroll{
+    left:0;
+    width: 100%;
+    font-size:1300%;
+    color:rgb(255, 255, 255);
+    white-space: nowrap;
+    font-weight: 200;
+}
+
+.name1{
+    left:0;
+}
+
+.name2{
+    left:0;
+}
+
+.space{
+    position: absolute;
+    width: 100px;
+    height: 5000px;
+}
+
+.mybutton{
+    width: 150px;
+    height: 150px;
+    position: relative;
+    background-color: aquamarine;
+    top:1500px;
+}
+
+
+.popupBox{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(32, 129, 95);
+}
+
+
+.quote-1{
+    transition:all 0.75s ease;
+    align-self: center;
+    position: absolute;
+    margin-right: 5%;
+    margin-top:0;
+    font-size: 400%;
+    font-weight: 100;
+    background-color: rgb(166, 222, 67);
+    height: 15%;
+    width: 100%;
+    color: rgb(252, 252, 252);
+}
+
+.container {
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 50%;
+   
+  }
+
+  .about-section{
+  }
+
+  .single-row{
+    position: relative;
+    width: fit-content;
+    display: flex;
+    height: fit-content;
+    align-items: center;
+    left: 10%;
+    padding: 0.3%;
+  }
+  
+  .the-square {
+    width: fit-content;
+    position: absolute;
+    opacity: 1px;
+    display: flex;
+    overflow: hidden;
+  }
+  
+  .twins1{
+      color: rgb(190, 190, 190);
+      font-size: 350%;
+      height: fit-content;
+      margin: 0;
+      white-space: nowrap;
+      font-weight: 250;
+      font-family: BebasNeue;
+  }
+  
+  .twins2{
+      color:rgb(89, 89, 89);  
+      white-space: nowrap;
+      font-size:  350%;
+      margin: 0;
+      font-weight: 250;
+      font-family: BebasNeue;
+  }
+
+.space-small{
+    position: relative;
+    height: 10%;
+    width: 100%;
+}
+
+.change-the-background{
+    background-color: rgb(182, 29, 29);
+}
+
+.change-the-background-quote{
+    background-color: rgb(157, 157, 157);
+    transition:all 1s ease;
+}
+
+  
+  .growing-section {
+    position: absolute;
+    height: 800px;
+    background-color: rgb(249, 116, 0);
+    width:100%
+  }
+
+  .fixed-section{
+    background-color: rgb(0, 118, 254);
+  }
+
+  
+  .fixed1 {
+    position: fixed;
+    top:0;
+  }
+
+  .bar{
+    position: relative;
+    color:rgb(173, 83, 83);
+    border-style: dashed; 
+    border-width: 10px;
+    width: 80%;
+  }
+
+  .parent-tag {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-bottom: 10px;
+  }
+  
+.text-section{
+    position: absolute;
+    top:20%;
+    left:0%;
+  }
+  
+  .parent-fixed-section {
+    transition:all 0.75s ease;
+    position: relative;
+    background-color: rgb(166, 222, 67);
+    min-height: 100vh;
+  }
+
+  .text-fixed-section{
+    position:absolute;
+    margin-top: 15%;
+
+}
+
+.vertical-bar{
+  position: absolute;
+  height: 100vh;
+  width:3%;
+  background-color: rgb(166, 222, 67);
+  right:0;
+  top:0;
+}
+
+.readMore{
+  position: absolute;
+  width: 5%;
+  height: 7%;
+  background-color: palevioletred;
+  left: 11%;
+  top:70%;
+  font-size: 40px;
+}
+
+.header-slide-bar{
+  animation: sidePopIn-rigth 1.5s forwards;
+  position: fixed;
+  top: 5%;
+  right: 0;
+  color: aliceblue;
+  background-color: rgb(59, 59, 59);
+  height: 5%;
+  width: 30%;
+  border-radius:10px 0 0 10px;
+  display: flex;
+  flex-direction: row;
+  z-index: 5;
+}
+
+.slider-button {
+  width: 10vh;
+  background-color: inherit;
+  border: 0;
+  margin-bottom: solid 1px black;
+  bottom: 5%;
+  margin-left: 2%;
+  font-size: x-large ;
+  color: white;
+  font-family: BebasNeue;
+}
+
+.slider-close {
+  width: 5vh;
+  /* margin: 0; */
+}
+
+.slider-button:hover {
+  background-color:  rgb(166, 222, 67);
+  transition:all 0.5s ease;
+  opacity: 0.7;
+  color: black;
+
+}
+
+ .running-name-box {
+    width: fit-content;
+    max-width: 100vw;
+    position: absolute;
+    bottom: 5%;
+    overflow-x: scroll;
+    justify-content: center;
+}
+
+.running-name{
+  position: relative;
+  font-weight: 200;
+  font-size: 10em;
+  color: rgb(229, 226, 221);
+  white-space: nowrap;
+  animation: name-slide 15s infinite;
+  justify-content: center;
+  font-family: "BebasNeue";
+  -webkit-text-stroke: 2px  rgb(145, 144, 144);
+  -webkit-text-fill-color:transparent;
+}
+
+@keyframes name-slide {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-500px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

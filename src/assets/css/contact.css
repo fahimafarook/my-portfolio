@@ -1,0 +1,274 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./fonts/Montserrat-Regular.woff2') format('woff2')
+}
+
+@font-face {
+  font-family: 'BebasNeue';
+  src: url('./fonts/BebasNeue.woff2') format('woff2')
+}
+
+
+body{
+    background-color: rgb(21, 21, 21);
+}
+
+.lets-work-title{
+    text-align: left;
+    margin-left: 20%;
+    font-size: 350%;
+    color: aliceblue;
+    width: 50%;
+    margin-bottom: 5%;
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.lablel{
+    color: aliceblue;
+    font-size: large;
+    align-content:left;
+    margin-top: 5%;
+    margin-left: 20%;
+    background-color: inherit;
+}
+
+.input{
+    font-size: large;
+    border: none; 
+    outline: none;
+    margin-top: 2%;
+    margin-left: 20%;
+    margin-bottom: 3%;
+    background-color: inherit;
+    text-overflow: ellipsis;
+    color: rgb(176, 180, 184);
+    width: 35%;
+    
+}
+
+.horizontal-line {
+    border-bottom: 0.5px solid rgb(102, 98, 98);
+    z-index: 3;
+    height: 1px;
+    width: 40%;
+    margin-left: 20%;
+  }
+
+  /* .label:hover, .input:hover {
+    color: rgb(182, 228, 29);
+  } */
+
+  .label:hover {
+    color: red;
+  }
+
+  .input:hover + .label {
+    /* Styles for label on hover */
+    color: red;
+  }
+
+.contact-section-container{
+  background-color: rgb(11, 11, 11);  /* -*- */
+  width: 100%;
+  height: 90vh;
+  z-index: 0;
+}
+
+
+.lets-work-on{
+  -webkit-text-stroke: 1px  rgb(255, 255, 255);
+  -webkit-text-fill-color: transparent;
+
+  font-size: 9em;
+  color: rgb(246, 249, 251);
+  top: 0;
+  margin-top: 5%; /* -*- */
+  font-weight: 700;
+  width: fit-content;
+  z-index: -1;
+  width: 100%;
+  font-family: "BebasNeue";
+  
+}
+
+.phone-number-button{
+}
+
+.hr-custom{
+  color:rgb(240, 240, 240);
+  border-style: dashed; 
+  border-width: 2.5px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+}
+
+
+.contact-us-button{ 
+  border: solid 0px white;
+  /* background-color:rgb(146, 137, 137); */
+  background-color: rgb(255, 255, 255);
+  position: relative;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  top:-10%;
+  left: 20%;
+  font-weight: 250;
+  color: rgb(0, 0, 0);
+  font-size: 150%;
+}
+
+.is-visible{
+  animation-name: fadeInUpConnect;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+.contact-section-container-visible{
+    z-index: 5;
+}
+
+.lets-work-on-visible{
+  animation: slideAnimation 4s forwards;
+}
+
+
+@keyframes slideAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-60px);
+  }
+}
+
+@keyframes fadeInUpConnect {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 30%, 0);
+  }
+
+  to { 
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.parent-send-email {
+  display: flex;
+}
+
+.send-me-email {
+  background-color: rgb(166, 222, 67);
+  font-size: 450%;
+  height: 20%;
+  width: 50%;
+  font-weight: 400;
+  justify-content: center;
+  font-family: "BebasNeue";
+}
+
+.email-arrow {
+  position: relative;
+  width: 10%;
+  background-color: rgb(242, 231, 239);
+  margin-left: 10px;
+  font-size: 400%;
+}
+
+.email-arrow::before {
+  content: "→";
+}
+
+.email-arrow:hover::before {
+  content: "♡";
+  color: rgb(250, 250, 250);
+}
+
+.email-arrow:hover {
+  background-color: rgb(46, 46, 46);
+}
+
+.footer{
+  position: absolute;
+  background-color: inherit;
+  bottom:0;
+  width: 100%;
+  height: 10%;
+  background-color: inherit;
+  display: flex;
+  flex-direction: row;
+}
+
+.time-parent{
+  position: relative;
+  margin-left: 3%;
+}
+
+.loacal-time-text{
+  font-family: "BebasNeue";
+  font-weight: 100;
+  font-size: 1em;
+  color: rgb(166, 167, 167);
+  width: fit-content;
+}
+
+.loacal-time{
+  font-family: "BebasNeue";
+  font-weight: 300;
+  font-size: 1.5em;
+  color: rgb(225, 225, 225);
+  width: fit-content;
+}
+
+.footer-contact{
+  position: relative;
+  left: 50%;
+  display: flex;
+  flex-direction: row;
+}
+
+.linkedin{
+  position: relative;
+  font-family: "BebasNeue";
+  font-weight: 300;
+  font-size: 1.5em;
+  color: rgb(225, 225, 225);
+  width: fit-content;
+}
+
+.mail-id{
+  position: relative;
+  font-family: "BebasNeue";
+  font-weight: 300;
+  font-size: 1.5em;
+  color: rgb(225, 225, 225);
+  width: fit-content;
+  margin-left: 10%;
+}
+
+.code-by{
+  position: relative;
+  font-family: "BebasNeue";
+  font-weight: 300;
+  font-size: 1.5em;
+  color:  rgb(166, 222, 67);
+  width: fit-content;
+  margin-left: 10%;
+  white-space: nowrap;
+}
+
+
+.linkedin, .mail-id :hover{
+  margin-bottom: 1px rgb(166, 222, 67);;
+}
