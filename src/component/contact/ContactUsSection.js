@@ -1,9 +1,15 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useContext } from 'react';
 import '../../assets/css/contact.css'
 import BgColorButton from '../helper/BgColorButton'
 import FooterPage from './FooterPage'
+import { DeviceContext } from '../../App';
+import linkedinIcon from "../../assets/css/images/linkedin-icon.png"
+import gmailIcon from "../../assets/css/images/gmail-icon.png"
+import { Navigate } from 'react-router-dom';
 
 function ContactUsSection(props) {
+
+   const deviceName = useContext(DeviceContext);
     
     const [xaxisScroll1, setXaxisScroll1] =  useState(-250); //-250
     const [yaxis, setYaxis] = useState(-500); //-*-
@@ -34,6 +40,10 @@ function ContactUsSection(props) {
       }
   }
 
+  const NavigateToLinkedin =()=>{
+    window.location.href = 'https://www.linkedin.com/in/fahima-farook/';
+  }
+
  
     useEffect(()=>{
 
@@ -45,7 +55,6 @@ function ContactUsSection(props) {
       }, 1000);
       
       const performAutoScroll = () => {               // -*-
-        console.log('performAutoScroll');
         contactUsButtonEle.scrollIntoView(true);
       }
 
@@ -81,24 +90,30 @@ function ContactUsSection(props) {
 
     return (
         <div className={`contact-section-container`} style ={{transform: `translateY(${yaxis}px)`}}>
-            <div ref={letsWorkRef} className={`lets-work-on ${isVisible.current ? 'lets-work-on-visible' : ''}`} >let's work on your project</div>
-            {/* <BgColorButton className = "mail-id-button" buttonName = "fahimafarook510@gmail.com"/>
-            <BgColorButton className = "phone-number-button" buttonName = "+91-8072498545"/> */}
+        {/* <div className={`contact-section-container`}> */}
+          <div className='row justify-content-end'>
+            <div ref={letsWorkRef} className={`lets-work-on ${deviceName=="phone"? "lets-work-on-mobile-font":""} ${isVisible.current ? 'lets-work-on-visible' : ''} col-12 col-md-12 justify-content-end`} >let's work on your project</div>
+          </div>
             <div className={`parent-send-email`}>
-              <div className={`send-me-email`}>send me an email</div>
-              <div className={`email-arrow`}></div>
+              <div className={`send-me-email col-9 col-md-8 ${deviceName=="phone"? "send-me-email-mobile-font":""}`}>
+                <div className='send-email-text'>send me an email</div>
+                {/* <div className='random-text'>unite</div> */}
+              </div>
+              <div className={`email-arrow col-2`} />
             </div>
-            {/* <hr className='hr-custom'></hr> */}
-            {/* <button className='contact-us-button' style={{transform: `translateX(${xaxisScroll1}px`}}>contact us</button> */}
-            <div className='footer'>
-              <div className='time-parent'>
+            <div className={`footer row ${deviceName=="phone"? "footer-mobile-font":""} justify-content-between`}>
+              <div className='time-parent col-2'>
                 <div className='loacal-time-text'>local time</div>
                 <div className='loacal-time'>{currentTime}</div>
               </div>
-              <div className='footer-contact'>
-                <div className='linkedin'>Linkedin</div>
-                <div className='mail-id'>fahimafarook510@gmail.com</div>
-                <div className='code-by'>code by fahima</div>
+              <div id='contactUs' className='footer-contact col-7 col-md-6 row justify-content-around h-50 align-item-bottom'>
+                  <div className={`linkedin col-2 col-md-2`} onClick={NavigateToLinkedin}>
+                    {deviceName === "phone" ? <img className='footer-icon' src={linkedinIcon} /> : "Linkedin"}
+                  </div>
+                  <div className='mail-id col-2 col-md-6'>
+                    {deviceName === "phone" ? <img className='footer-icon' src={gmailIcon} /> : "fahimafarook510@gmail.com"}
+                  </div>
+                  <div className='code-by col-6 col-md-3'>code by fahima</div>
               </div>
             </div>
         </div>

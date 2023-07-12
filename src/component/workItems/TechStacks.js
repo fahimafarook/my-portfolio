@@ -23,6 +23,9 @@ function TechStacks() {
     const isVisibleRef = useRef(false);
     const containerRef = useRef(null);
     const curvedContainer = useRef(null);
+
+    const techContent1 = [htmlImage, cssImage, bootstrapImage, jsImage, reactImage]
+    const techContent2 = [sql, java, spring, aws, reactImage]
  
 
 
@@ -35,7 +38,7 @@ function TechStacks() {
         let eleHeight = targetElement.getBoundingClientRect().height;
         let conversionRate = (eleHeight / 1.5) / initialCurve; // -*-
         return initialCurve + (topPos / conversionRate);
-      }
+    }
 
     useEffect(()=>{
         const observer = new IntersectionObserver((entries) => {
@@ -86,44 +89,39 @@ function TechStacks() {
     return (
 
     <div className="work-item-section w-25pc h-1by1 pattern-grid-md yellow-darker bg-yellow">
-        <div ref={containerRef} className={`tech-stack-header ${isVisibleRef.current? 'is-visible' : ''}`}>we can help you with</div>
+        <div className={`tech-stack-header ${isVisibleRef.current? 'is-visible' : ''}`}>we can help you with</div>
         <div className='stack-parent container-fluid'>
             <hr className='ruller'></hr>
-            <div className = "row-1 row justify-content-center h-40 align-top" style={{left: "0px", transform: `translate(${xaxisScroll1}px, 0px) translate3d(0px, 0px, 0px)`}}>
-                <div className = "image-background col-xs-6 col-md-2" style={{backgroundColor : ""}}>
-                    <img className = "imageThing img-fluid"  src={htmlImage}></img>
-                </div>
-                <div className = "image-background col-xs-6 col-md-2">
-                    <img className = "imageThing img-fluid"  src={cssImage}></img>
-                </div>
-                <div className = "image-background col-xs-6 col-md-2">
-                    <img className = "imageThing img-fluid"  src={bootstrapImage}></img>
-                </div>
-                <div className = "image-background col-xs-6 col-md-2">
-                    <img className = "imageThing img-fluid"  src={reactImage}></img>
-                </div>
-                <div className = "image-background col-xs-6 col-md-2">
-                    <img className = "imageThing img-fluid"  src={jsImage}></img>
-                </div>
+            <div ref={containerRef} className = "row-1 row justify-content-center h-40 align-top" style={{left: "0px", transform: `translate(${window.innerWidth < 768 ? 0 : xaxisScroll1}px, 0px) translate3d(0px, 0px, 0px)`}}>
+                {
+                    techContent1.map((content, index) => (
+                        <div className = {`image-background col-4 col-md-2 key=${index}`} style={{backgroundColor : ""}}>
+                            <img className = "imageThing img-fluid"  src={content}></img>
+                        </div>
+                    ))
+                }
+                { window.innerWidth < 768 && 
+
+                    techContent2.map((content, index) => (
+                        <div className = {`image-background col-4 col-md-2 key=${index}`} style={{backgroundColor : ""}}>
+                            <img className = "imageThing img-fluid"  src={content}></img>
+                        </div>
+                    ))
+                }
             </div>
             <hr className='seprater row h-5'></hr>
-            <div ref={containerRef} className = "row-2 row justify-content-center h-40 align-bottom" style={{left: "0px", transform: `translate(${xaxisScroll2}px, 0px) translate3d(0px, 0px, 0px)`}}>
-                <div className = "image-background col-xs-6 col-md-2">
-                    <img className = "imageThing img-fluid"  src={sql}></img>
+            { window.innerWidth > 768 &&
+                <div className = "row-2 row justify-content-center h-40 align-bottom" style={{left: "0px", transform: `translate(${xaxisScroll2}px, 0px) translate3d(0px, 0px, 0px)`}}>
+                    {
+
+                        techContent2.map((content, index) => (
+                            <div className = {`image-background col-4 col-md-2 key=${index}`} style={{backgroundColor : ""}}>
+                                <img className = "imageThing img-fluid"  src={content}></img>
+                            </div>
+                        ))
+                    }
                 </div>
-                <div className = "image-background col-xs-6 col-md-2">
-                    <img className = "imageThing img-fluid"  src={java}></img>
-                </div>
-                <div className = "image-background col-xs-6 col-md-2">
-                    <img className = "imageThing img-fluid"  src={spring}></img>
-                </div>
-                <div className = "image-background col-xs-6 col-md-2">
-                    <img className = "imageThing img-fluid"  src={aws}></img>
-                </div>
-                <div className = "image-background col-xs-6 col-md-2">
-                    <img className = "imageThing img-fluid"  src={reactImage}></img>
-                </div>
-            </div>
+            }
         </div>
         <hr className='ruller'></hr>
         <div className = "tub-parent">

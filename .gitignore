@@ -1,0 +1,17 @@
+node_modules
+dist
+coverage
+*.local.*
+*.local
+
+stats.*
+
+#Logs
+pnpm-debug.log*
+
+# Editor directories and files
+# .vscode/*
+!.vscode/extensions.json
+.DS_Store
+# build/static/*
+# node_modules/.cache/*

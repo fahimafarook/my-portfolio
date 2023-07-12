@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.fb940399.css",
+    "main.js": "/static/js/main.ed54ddba.js",
+    "static/js/787.54a23d6a.chunk.js": "/static/js/787.54a23d6a.chunk.js",
+    "static/media/Montserrat-Regular.woff2": "/static/media/Montserrat-Regular.58a8d7ebc386843b62c5.woff2",
+    "static/media/react.png": "/static/media/react.834c9e6e22969702915a.png",
+    "static/media/BebasNeue.woff2": "/static/media/BebasNeue.c803f73085df1ec6234f.woff2",
+    "static/media/fahima5.png": "/static/media/fahima5.df32ef87820278718022.png",
+    "static/media/earth-svgrepo-com.svg": "/static/media/earth-svgrepo-com.c5f893ccaa684ef90d7c.svg",
+    "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/index.html",
+    "main.fb940399.css.map": "/static/css/main.fb940399.css.map",
+    "main.ed54ddba.js.map": "/static/js/main.ed54ddba.js.map",
+    "787.54a23d6a.chunk.js.map": "/static/js/787.54a23d6a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fb940399.css",
+    "static/js/main.ed54ddba.js"
+  ]
+}
