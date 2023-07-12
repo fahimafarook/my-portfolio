@@ -42,3 +42,9 @@
 #hellos{
   color: hsl(172, 100%, 50%);
 }
+
+
+@font-face {
+  font-family: 'BebasNeue';
+  src: url('./assets/css/fonts/BebasNeue.woff2') format('woff2')
+}

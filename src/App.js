@@ -16,6 +16,7 @@ import ContactUsForm from './component/contact/ContactUsForm'
 import InfiniteNameScroll from './component/profilePage/InfiniteNameScroll'
 import LandingPage from './component/LandingPage'
 import ContactUsSection from './component/contact/ContactUsSection'
+import './assets/css/fonts/BebasNeue.woff2';
 
 export const DeviceContext = React.createContext();
 
