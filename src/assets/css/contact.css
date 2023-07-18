@@ -17,7 +17,7 @@ body{
     text-align: left;
     margin-left: 20%;
     font-size: 350%;
-    color: aliceblue;
+    background-color: rgb(255, 255, 255);
     width: 50%;
     margin-bottom: 5%;
 }
@@ -73,11 +73,19 @@ body{
   }
 
 .contact-section-container{
+    /* background-image: url('./images/contact.png'); */
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
   background-color: rgb(11, 11, 11);  /* -*- */
   width: 100%;
   height: 90vh;
   z-index: 0;
 }
+
+
 
 .lets-work-on{
   -webkit-text-stroke: 1px  rgb(255, 255, 255);
@@ -179,6 +187,7 @@ body{
 }
 
 .send-me-email {
+  transition:all 0.5s ease;
   background-color: rgb(166, 222, 67);
   width: 50%;
   font-weight: 400;
@@ -187,10 +196,47 @@ body{
   max-width: 900px;
 }
 
+.effect2{
+  position: relative;
+  transition:all .5s ease;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(140, 138, 138);
+  z-index: 1;
+  top:0;
+  left:-100%;
+  z-index: 4;
+  opacity: 1;
+  /* border-radius: 0 50px 50px 0; */
+}
+
+.send-me-email:hover .effect2 {
+  left:0%;
+  border-radius: 0px 0px 0px 0px;
+  background-color: rgb(27, 26, 26);
+}
+.send-email-text:hover {
+ color: rgb(193, 193, 193);
+}
+
+.send-me-email:hover {
+  /* border: solid 1px  rgb(52, 53, 52);
+  border-left: none; */
+ }
+
+ .parent-send-email:hover .email-arrow{
+  background-color: rgb(166, 222, 67);
+ }
+
+
 .send-email-text{
-  font-family: "BebasNeue";
+  transition:all .5s ease;
+   top:-100%;
+   position: relative;
+   font-family: "BebasNeue";
    font-size: 450%;
    font-weight: 400;
+   z-index: 4;
 }
 
 
@@ -236,10 +282,11 @@ body{
 }
 
 .email-arrow {
+  transition:all .5s ease;
   position: relative;
   padding: none;
   width: 10%;
-  background-color: rgb(242, 231, 239);
+  background-color: rgb(242, 242, 242);
   margin-left: 10px;
   font-size: 450%;
   max-width: 150px;

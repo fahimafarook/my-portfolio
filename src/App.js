@@ -17,6 +17,7 @@ import InfiniteNameScroll from './component/profilePage/InfiniteNameScroll'
 import LandingPage from './component/LandingPage'
 import ContactUsSection from './component/contact/ContactUsSection'
 import './assets/css/fonts/BebasNeue.woff2';
+import { ParallaxProvider } from 'react-scroll-parallax';
 
 export const DeviceContext = React.createContext();
 
@@ -58,6 +59,7 @@ function App() {
 
   return (
     <div className="App">
+      <ParallaxProvider>
       {console.log("showSplashScreen", showSplashScreen)}
       {showSplashScreen && <SlideAndHide showScreen = {setShowSplashScreen} /> }
         <Router>
@@ -71,6 +73,7 @@ function App() {
             <Headerbar />
           </DeviceContext.Provider>
         </Router>
+        </ParallaxProvider>
     </div>
   );
 }

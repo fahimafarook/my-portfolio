@@ -7,14 +7,24 @@ function BouncyButton(props) {
     const buttonMouseHovered = useRef(false);
     const buttonElement = useRef(null);
     const buttonCenter = useRef({x:0, y:0});
+    let rect;
 
     useEffect(()=>{
         buttonElement.current = document.getElementsByClassName(props.className)[0];
-        let rect = buttonElement.current.getBoundingClientRect();
+        rect = buttonElement.current.getBoundingClientRect();
         buttonCenter.current.x = (rect.width/2) + rect.left;
         buttonCenter.current.y = (rect.height/2) + rect.top;
 
+        window.addEventListener("resize", resizeHandler);
+
     }, [])
+
+    const resizeHandler = ()=>{
+        rect = buttonElement.current.getBoundingClientRect();
+        buttonCenter.current.x = (rect.width/2) + rect.left;
+        buttonCenter.current.y = (rect.height/2) + rect.top;
+    }
+
     const handleMouseMove =(event)=>{
         if(buttonMouseHovered.current){
             const { clientX, clientY } = event;

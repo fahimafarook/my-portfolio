@@ -6,6 +6,8 @@ import ContactUsSection from './contact/ContactUsSection'
 import FooterPage from './contact/FooterPage'
 import Headerbar from './helper/Headerbar'
 import '../assets/css/helper.css' //-*-
+import NoLimitSection from './helper/NoLimitSection'
+import TextZoomOut from './helper/TextZoomOut';
 
 
 function LandingPage(props) {
@@ -14,6 +16,9 @@ function LandingPage(props) {
     return (
         <div className="landing-page-container"> {/* -*- */}
             <ProfilePage/>
+            {/* <TextZoomOut/> */}
+            <NoLimitSection/>
+           
             <AboutMe />
             <TechStacks/>
             <ContactUsSection/>

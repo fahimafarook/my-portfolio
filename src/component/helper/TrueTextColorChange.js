@@ -44,6 +44,7 @@ function TrueTextColorChange(props) {
     const sectionRed = useRef(false);
 
     useEffect(()=>{
+        readingSpeed.current = props.startReading? 80 : 0
         let data = {
             scrollDown: false,
             scrollUp: false,
@@ -121,6 +122,11 @@ function TrueTextColorChange(props) {
         };
 
     }, [])
+
+    useEffect(()=>{
+        readingSpeed.current = props.startReading? 130 : 0;
+    },[props])
+
     return (
         <div className='container-fluid about-section'>
           {lines.map((element, index) => (
@@ -131,7 +137,7 @@ function TrueTextColorChange(props) {
                 </div>
             </div>
             ))}
-            {readingSpeed.current = props.startReading? 80 : 0}
+            {}
         </div>
     );
 }

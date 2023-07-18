@@ -40,19 +40,16 @@ function AboutMe(props) {
         end: `+=100%`,
         pin: true,
          onEnter: () => {
-          console.log("on Nter--------------");
           setSectionArrived(true);
           document.getElementsByClassName('parent-fixed-section')[0].style.backgroundColor = "black"; // from up
           document.getElementsByClassName('read-more')[0].classList.remove('visible-up')
           document.getElementsByClassName('read-more')[0].classList.add('visible-down')
         },
         onLeaveBack: () => {
-          console.log("on NEter- onLeaveBack-------------");
           document.getElementsByClassName('parent-fixed-section')[0].style.backgroundColor = "rgb(166, 222, 67)";
           setSectionArrived(false);
         },
         onLeave: () => {
-          console.log("on NEter- onLeave-------------");
           setSectionArrived(false);
           document.getElementsByClassName('parent-fixed-section')[0].style.backgroundColor = "rgb(166, 222, 67)";
         }
@@ -64,7 +61,6 @@ function AboutMe(props) {
         onEnter: () => {
         },
         onLeaveBack: () => { // 
-          console.log("on leav-----");
           document.getElementsByClassName('parent-fixed-section')[0].style.backgroundColor = "black"; // from down
           document.getElementsByClassName('read-more')[0].classList.remove('visible-down')
           document.getElementsByClassName('read-more')[0].classList.add('visible-up')

@@ -41,7 +41,11 @@ function ContactUsSection(props) {
   }
 
   const NavigateToLinkedin =()=>{
-    window.location.href = 'https://www.linkedin.com/in/fahima-farook/';
+    window.open('https://www.linkedin.com/in/fahima-farook/');
+  }
+
+  const openMailBox = ()=>{
+    window.open("mailto:fahimafarook05@gmail.com?subject=lets build the big thing! &body= Hey pal,%0D%0A%0D%0A I would like to enquire about ....");
   }
 
  
@@ -90,12 +94,14 @@ function ContactUsSection(props) {
 
     return (
         <div className={`contact-section-container`} style ={{transform: `translateY(${yaxis}px)`}}>
+        <div className='pears-bg'>
         {/* <div className={`contact-section-container`}> */}
           <div className='row justify-content-end'>
             <div ref={letsWorkRef} className={`lets-work-on ${deviceName=="phone"? "lets-work-on-mobile-font":""} ${isVisible.current ? 'lets-work-on-visible' : ''} col-12 col-md-12 justify-content-end`} >let's work on your project</div>
           </div>
-            <div className={`parent-send-email`}>
+            <div className={`parent-send-email`} onClick={openMailBox}>
               <div className={`send-me-email col-9 col-md-8 ${deviceName=="phone"? "send-me-email-mobile-font":""}`}>
+                <div className = "effect2"></div>
                 <div className='send-email-text'>send me an email</div>
                 {/* <div className='random-text'>unite</div> */}
               </div>
@@ -110,11 +116,12 @@ function ContactUsSection(props) {
                   <div className={`linkedin col-2 col-md-2`} onClick={NavigateToLinkedin}>
                     {deviceName === "phone" ? <img className='footer-icon' src={linkedinIcon} /> : "Linkedin"}
                   </div>
-                  <div className='mail-id col-2 col-md-6'>
-                    {deviceName === "phone" ? <img className='footer-icon' src={gmailIcon} /> : "fahimafarook510@gmail.com"}
+                  <div className='mail-id col-2 col-md-6' onClick={openMailBox}>
+                    {deviceName === "phone" ? <img className='footer-icon' src={gmailIcon} /> : "fahimafarook05@gmail.com"}
                   </div>
                   <div className='code-by col-6 col-md-3'>code by fahima</div>
               </div>
+            </div>
             </div>
         </div>
     );

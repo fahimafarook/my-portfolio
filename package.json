@@ -12,6 +12,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.2",
     "react-scripts": "5.0.1",
+    "react-scroll-parallax": "^3.4.2",
     "sas": "^3.0.4",
     "sass": "^1.63.4",
     "scrolltrigger": "^1.0.1",

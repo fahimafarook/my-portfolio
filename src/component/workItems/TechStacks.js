@@ -10,6 +10,8 @@ import sql from "../../assets/css/images/mysql.png"
 import java from "../../assets/css/images/java.png"
 import spring from "../../assets/css/images/springboot.png"
 import aws from "../../assets/css/images/aws.png"
+import wordpress from "../../assets/css/images/wordpress.png"
+
 
 const initialCurve = 50;
 
@@ -24,8 +26,8 @@ function TechStacks() {
     const containerRef = useRef(null);
     const curvedContainer = useRef(null);
 
-    const techContent1 = [htmlImage, cssImage, bootstrapImage, jsImage, reactImage]
-    const techContent2 = [sql, java, spring, aws, reactImage]
+    const techContent1 = [htmlImage, cssImage, wordpress,bootstrapImage, reactImage]
+    const techContent2 = [sql, java, spring, aws, jsImage ]
  
 
 
@@ -87,8 +89,7 @@ function TechStacks() {
           };
     },[])
     return (
-
-    <div className="work-item-section w-25pc h-1by1 pattern-grid-md yellow-darker bg-yellow">
+    <div id = "work" className="work-item-section w-25pc h-1by1 pattern-grid-md yellow-darker bg-yellow">
         <div className={`tech-stack-header ${isVisibleRef.current? 'is-visible' : ''}`}>we can help you with</div>
         <div className='stack-parent container-fluid'>
             <hr className='ruller'></hr>
