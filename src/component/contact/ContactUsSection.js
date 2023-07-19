@@ -96,7 +96,7 @@ function ContactUsSection(props) {
         <div className={`contact-section-container`} style ={{transform: `translateY(${yaxis}px)`}}>
         <div className='pears-bg'>
         {/* <div className={`contact-section-container`}> */}
-          <div className='row justify-content-end'>
+        <div className="row justify-content-end mt-5"> {/* =0= */}
             <div ref={letsWorkRef} className={`lets-work-on ${deviceName=="phone"? "lets-work-on-mobile-font":""} ${isVisible.current ? 'lets-work-on-visible' : ''} col-12 col-md-12 justify-content-end`} >let's work on your project</div>
           </div>
             <div className={`parent-send-email`} onClick={openMailBox}>

@@ -49,9 +49,11 @@ function App() {
 
   useEffect(() => {
     if(showSplashScreen){
-    document.body.style.overflow = "hidden";
+      document.body.style.overflow = "hidden";
+      document.getElementById('profilePage').scrollIntoView(); // =0=
     }
     else{
+      resizeHandler(); // =0=
       document.body.style.overflow = "auto";
     }
     

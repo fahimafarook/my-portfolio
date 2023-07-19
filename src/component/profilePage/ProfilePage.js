@@ -31,7 +31,7 @@ function ProfilePage() {
    },[])
    
     return (
-        <div className='profile-page container-fluid'>
+        <div id='profilePage' className='profile-page container-fluid'>
             <div className='top-left-text col-4 col-md-1 justify-content-start'></div>
             {(deviceName === "tab" || deviceName === "laptop") && <div className = "locatedAt">
                 <pre className='located-at-text'>{`located at 

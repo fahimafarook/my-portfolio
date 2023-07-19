@@ -8,6 +8,7 @@ function TextZoomOut() {
 
     const count = useRef(0);
     const scrollTrigger1 =useRef(null);
+    const scrollEnd = window.innerHeight < window.innerWidth ? '150' : '120' 
 
     function randomNumber(min, max) {
       return Math.floor(Math.random() * (max - min + 1)) + min
@@ -92,10 +93,13 @@ function TextZoomOut() {
        
          <div className='text-zoomout-section'>
             <Parallax scale={[1, 0.55]} speed ={5} >
-                <div className='scale-text'>wat do u wanna convey</div>
+                <div className='scale-text1'>u think it</div>
+            </Parallax>
+
+           <Parallax scale={[0.5, 1.2]} speed ={5} >
+              <div className='scale-text2'>we make it</div> 
             </Parallax>
            </div>
-
         </div>
     );
 }

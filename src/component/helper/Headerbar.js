@@ -9,7 +9,8 @@ import { DeviceContext } from '../../App';
 
 function Headerbar() {
 
-    const deviceName = useContext(DeviceContext);
+    const deviceName = useRef(useContext(DeviceContext)); // =0=
+    deviceName.current = useContext(DeviceContext); // =0=
     
     const[headerbar, setHeaderbar] = useState(true);
     const[headerIcon, setHeaderIcon] = useState(false);
@@ -29,7 +30,7 @@ function Headerbar() {
     }
 
     const handleScroll = () => {
-        if(deviceName != "phone"){
+        if(deviceName.current != "phone"){
             if(headerTopValue.current.getBoundingClientRect().bottom > - 100.0){ // to change it to bar, if we dont consider bloom/fade
                 setBarOrIcon((prev) => prev === "icon"? fade() : "bar" );
             }
@@ -44,7 +45,7 @@ function Headerbar() {
       }
 
       async function bloom(){
-        let maxSize = deviceName === "phone" ? 60 : 70;
+        let maxSize = deviceName.current === "phone" ? 60 : 70;
         for(let i = 0.1; i <= 1; i=i+0.1){
             await delay(20);
             document.getElementsByClassName('header-icon')[0].style.height = `${maxSize*i}px`;
@@ -54,7 +55,7 @@ function Headerbar() {
       }
 
       async function fade(){
-        let maxSize = deviceName === "phone" ? 60 : 70;
+        let maxSize = deviceName.current === "phone" ? 60 : 70;
         setIsPopupVisible(false);
         for(let i = 1; i >= 0; i=i-0.1){
             await delay(20);

@@ -354,14 +354,30 @@
     background-color: rgb(0, 0, 0);
   }
 
-  .scale-text{
+  .scale-text1{
     z-index: 20;
     position: absolute;
-    top:0%;
+    top:-10%;
     left: 0%;
     color: rgb(66, 66, 66);
     display: flex;
     font-size: 2800%;
+    font-family: BebasNeue;
+    font-weight: 700;
+    white-space: nowrap;
+    justify-content: center; 
+    /* background-color: aqua; */
+
+  }
+
+  .scale-text2{
+    z-index: 20;
+    position: absolute;
+    top:50%;
+    left: 0%;
+    color: rgb(87, 87, 87);
+    display: flex;
+    font-size: 1700%;
     font-family: BebasNeue;
     font-weight: 700;
     white-space: nowrap;
@@ -420,4 +436,24 @@
     100%{
         transform: scale(1.5);
     }
+}
+
+
+@media (max-width: 768px) {
+  .keys{
+    border-radius: 5px;
+  }
+  .enter-key{
+    border-radius: 5px;
+   
+  }
+  .scale-text1{
+    font-size: 1000%;
+    top: 10%;
+  }
+
+  .scale-text2{
+    font-size: 800%;
+    top: 40%;
+  }
 }
