@@ -159,7 +159,6 @@ function NoLimitSection() {
             }
 
             const handleScroll = () => {
-                console.log(window.scrollY);
                 const elementPosition = document.getElementsByClassName('next-animae-trigger')[0]; 
                 if (triggerEle && elementPosition.getBoundingClientRect().top >=  window.innerHeight) {  
                     elementInMiddle.current = true;
@@ -223,7 +222,6 @@ function NoLimitSection() {
                     
                 </div> 
             </div>
-            {console.log("gvbhyuijkoijhbgjik-------------")}
             <hr ref = {triggerEle} className='trigger-line'></hr>
             
         </div>

@@ -16,10 +16,11 @@ function LandingPage(props) {
     return (
         <div className="landing-page-container"> {/* -*- */}
             <ProfilePage/>
-            {/* <TextZoomOut/> */}
-            <NoLimitSection/>
            
+            <NoLimitSection/>
+            <TextZoomOut/>
             <AboutMe />
+           
             <TechStacks/>
             <ContactUsSection/>
         </div>

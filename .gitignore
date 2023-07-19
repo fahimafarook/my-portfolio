@@ -14,4 +14,4 @@ pnpm-debug.log*
 !.vscode/extensions.json
 .DS_Store
 # build/static/*
-# node_modules/.cache/*
+node_modules

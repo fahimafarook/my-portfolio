@@ -13,7 +13,7 @@
     text-align: center;
     padding: 5%;
     font-family: BebasNeue;
-    top:-5%
+    top:-5%;
 }
 
 .ruller{
@@ -31,7 +31,8 @@
   /* background-color: aliceblue; */
   border: solid 0.5px rgb(139, 139, 139);
   border-radius: 5px;
-  background-color: rgb(242, 242, 242);
+  /* background-color: rgb(242, 242, 242); */
+  background-color: white;
   margin: 1vw;
   transition:all 5s ease;
 }
@@ -82,7 +83,8 @@
 .work-item-section {
   min-height: 120vh;
   height: fit-content;
-  background-color: rgb(242, 242, 242);
+  /* background-color: rgb(242, 242, 242); */
+  background-color: white;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -97,7 +99,8 @@
 
 .curved-frame {
   height: 200px;
-  background-color: rgb(242, 242, 242);
+  /* background-color: rgb(242, 242, 242); */
+  background-color: white;
   z-index: 3;
   
 }

@@ -3,7 +3,7 @@ import '../../assets/css/helper.css'
 import HeaderIcon from '../helper/HeaderIcon';
 
 function SlideAndHide(props) {
-    const [hellos, setHellos] = useState(['வணக்கம்', 'hello', 'Nǐn hǎo','হ্যালো।', 'Bonjour', 'مرحبًا', 'Hola', 'Olá', 'नमस्ते। ', 'Dzień dobry','Chào chị', 'สวัสดี']);
+    const [hellos, setHellos] = useState(['hello', 'வணக்கம்', 'హలో', 'Nǐn hǎo', 'ഹലോ', 'হ্যালো।', 'Bonjour', 'مرحبًا', 'ನಮಸ್ಕಾರ', 'Hola', 'Olá', 'नमस्ते। ','Chào chị', 'สวัสดี']);
     const hellosLength = hellos.length;
     const [helloIndex, setHelloIndex] = useState(0);
     const ready = useRef(false);
@@ -13,7 +13,7 @@ function SlideAndHide(props) {
     } 
 
     useEffect(()=> {
-        const intervalId = setInterval(dispayNextHello, 150);
+        const intervalId = setInterval(dispayNextHello, 200);
     
     return () => {clearInterval(intervalId);
        };
