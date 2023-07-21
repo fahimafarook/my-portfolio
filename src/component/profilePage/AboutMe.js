@@ -51,7 +51,7 @@ function AboutMe(props) {
         },
         onLeave: () => {
           setSectionArrived(false);
-          document.getElementsByClassName('parent-fixed-section')[0].style.backgroundColor = "rgb(166, 222, 67)";
+          document.getElementsByClassName('parent-fixed-section')[0].style.backgroundColor = "black";
         }
       });
 

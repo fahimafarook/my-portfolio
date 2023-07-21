@@ -23,13 +23,20 @@ function SlideAndHide(props) {
 
     return (
         <div className='splash-screen'>
+            {
+                helloIndex <= hellosLength &&
+            <div>
+                <div id="stars"></div>
+                <div id="stars2"></div>
+            </div>
+            }
             <div className={`upper-rect ${helloIndex >= hellosLength? 'tranform-upper-rect': ""}`}></div>
             <div className={`lower-rect ${helloIndex >= hellosLength? 'tranform-lower-rect': ""}`}></div>
             {/* <div className={`hello-container`}> */}
             <div className={`hello-container ${helloIndex >= hellosLength? 'ready-text': ""}`}>
                 <div className='hellos'>{`${helloIndex >= hellosLength? 'B000M': hellos[helloIndex]}`}</div>
             </div>
-            {helloIndex >= hellosLength && setTimeout(() => props.showScreen(false), 3000)}
+            {helloIndex >= hellosLength && setTimeout(() => props.showScreen(false), 2500)}
         </div>
     );
 }

@@ -11,7 +11,7 @@ function NoLimitSection() {
     const count = useRef(0);
     const scrollTrigger1 =useRef(null);
     const vx = window.innerHeight < window.innerWidth ? 'vh' : 'vw' 
-    const scrollEnd = window.innerHeight < window.innerWidth ? '200' : '70' 
+    const scrollEnd = window.innerHeight < window.innerWidth ? '200' : '120' 
     
     let parallaxConfig = { 
         topLeft: {

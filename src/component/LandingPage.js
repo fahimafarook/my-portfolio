@@ -18,8 +18,9 @@ function LandingPage(props) {
             <ProfilePage/>
            
             <NoLimitSection/>
-            <TextZoomOut/>
+           
             <AboutMe />
+            <TextZoomOut/>
            
             <TechStacks/>
             <ContactUsSection/>
