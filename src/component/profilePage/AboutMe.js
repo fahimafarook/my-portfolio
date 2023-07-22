@@ -9,11 +9,14 @@ import { DeviceContext } from '../../App';
 function AboutMe(props) {
   const prevScrollPosition = useRef(0);
   const [sectionArrived, setSectionArrived] = useState(false);
+  const [makeItGrey, setMakeItGrey] = useState(false);
+  const [makeItWhite, setMakeItWhite] = useState(false);
   const quoteRef = useRef(null);
   const deviceName = useContext(DeviceContext);
   const count = useRef(0);
   const [childValue, setChildValue] = useState('default');
   const scrollTriggerRef = useRef(null);
+  const scrollEnd = window.innerHeight < window.innerWidth ? '150' : '100' 
 
   const handleChildValue = (value) => {
     setChildValue(value);
@@ -37,10 +40,13 @@ function AboutMe(props) {
         ease: 'power3.out',
         trigger: ".parent-tag",
         start: "top top",
-        end: `+=100%`,
+        end: `+=${scrollEnd}%`,
         pin: true,
          onEnter: () => {
           setSectionArrived(true);
+          setMakeItWhite(false);
+          setMakeItGrey(false);
+        
           document.getElementsByClassName('parent-fixed-section')[0].style.backgroundColor = "black"; // from up
           document.getElementsByClassName('read-more')[0].classList.remove('visible-up')
           document.getElementsByClassName('read-more')[0].classList.add('visible-down')
@@ -48,9 +54,13 @@ function AboutMe(props) {
         onLeaveBack: () => {
           document.getElementsByClassName('parent-fixed-section')[0].style.backgroundColor = "rgb(166, 222, 67)";
           setSectionArrived(false);
+          setMakeItGrey(true);
+          setMakeItWhite(false);
         },
         onLeave: () => {
           setSectionArrived(false);
+          setMakeItWhite(true);
+          setMakeItGrey(false);
           document.getElementsByClassName('parent-fixed-section')[0].style.backgroundColor = "black";
         }
       });
@@ -65,8 +75,11 @@ function AboutMe(props) {
           document.getElementsByClassName('read-more')[0].classList.remove('visible-down')
           document.getElementsByClassName('read-more')[0].classList.add('visible-up')
           setSectionArrived(true);
+          setMakeItWhite(false);
+          setMakeItGrey(false);
         },
         onLeave: () => {
+         
         }
       });
       count.current = count.current + 1;
@@ -83,7 +96,7 @@ function AboutMe(props) {
         {/* <div className='vertical-bar'>vertical-bar</div> */}
           {/* <div className={`quote-1`}>Every solution leads to a betterment</div> */}
           <div className='text-section'>
-            <TrueTextColorChange startReading = {sectionArrived} onChildValue={handleChildValue}/>
+            <TrueTextColorChange makeItWhite = {makeItWhite} makeItGrey = {makeItGrey}  startReading = {sectionArrived} onChildValue={handleChildValue}/>
             <div className='read-more'>→</div>
             {/* {console.log("innerwidt", window.innerHeight, document.getElementsByClassName('parent-tag')[0].getBoundingClientRect().bottom)} */}
           </div>

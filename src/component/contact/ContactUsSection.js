@@ -100,6 +100,7 @@ function ContactUsSection(props) {
             <div ref={letsWorkRef} className={`lets-work-on ${deviceName=="phone"? "lets-work-on-mobile-font":""} ${isVisible.current ? 'lets-work-on-visible' : ''} col-12 col-md-12 justify-content-end`} >let's work on your project</div>
           </div>
             <div className={`parent-send-email`} onClick={openMailBox}>
+           
               <div className={`send-me-email col-9 col-md-8 ${deviceName=="phone"? "send-me-email-mobile-font":""}`}>
                 <div className = "effect2"></div>
                 <div className='send-email-text'>send me an email</div>

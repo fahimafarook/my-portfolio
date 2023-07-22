@@ -62,7 +62,6 @@ function App() {
   return (
     <div className="App">
       <ParallaxProvider>
-      {console.log("showSplashScreen", showSplashScreen)}
       {showSplashScreen && <SlideAndHide showScreen = {setShowSplashScreen} /> }
         <Router>
           <DeviceContext.Provider value={screenName}>

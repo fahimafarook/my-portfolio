@@ -66,14 +66,14 @@ function TextZoomOut() {
             trigger: ".text-zoomout-section",
             start: "bottom bottom",
              onEnter: () => {
-              console.log("on Nter1--------------");
+             
               
             },
             onLeaveBack: () => {
-              console.log("oonLeaveBack--------------");
+            
             }, 
             onLeave: () => {
-              console.log("on NEter- onLeave1-------------"); 
+             
               
             } 
           });

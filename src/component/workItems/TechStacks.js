@@ -11,6 +11,7 @@ import java from "../../assets/css/images/java.png"
 import spring from "../../assets/css/images/springboot.png"
 import aws from "../../assets/css/images/aws.png"
 import wordpress from "../../assets/css/images/wordpress.png"
+import BgColorButton from '../helper/BgColorButton'
 
 
 const initialCurve = 50;
@@ -56,6 +57,8 @@ function TechStacks() {
         const techStacksOnScroll = ()=>{
             let currentScrollPostion = window.scrollY;
             if(isVisibleRef.current){
+                document.getElementsByClassName('tech-stack-header')[0].classList.add('is-visible') // =0=
+
                 if(currentScrollPostion > prevScrollPosition.current)
                 {
                     setXaxisScroll1((prev)=>prev+0.5);
@@ -68,6 +71,10 @@ function TechStacks() {
                 prevScrollPosition.current =  currentScrollPostion;
 
                 setCurveSize(calculateCurve(curvedContainer.current));
+            }
+            else{
+                prevScrollPosition.current = window.scrollY; // =0=
+                document.getElementsByClassName('tech-stack-header')[0].classList.remove('is-visible') // =0=
             }
         }
 
@@ -90,7 +97,9 @@ function TechStacks() {
     },[])
     return (
     <div id = "work" className="work-item-section w-25pc h-1by1 pattern-grid-md yellow-darker bg-yellow">
-        <div className={`tech-stack-header ${isVisibleRef.current? 'is-visible' : ''}`}>we can help you with</div>
+       
+        
+        <div className={`tech-stack-header ${isVisibleRef.current? 'is-visible' : ''} `}>we can help you with</div>
         <div className='stack-parent container-fluid'>
             <hr className='ruller'></hr>
             <div ref={containerRef} className = "row-1 row justify-content-center h-40 align-top" style={{left: "0px", transform: `translate(${window.innerWidth < 768 ? 0 : xaxisScroll1}px, 0px) translate3d(0px, 0px, 0px)`}}>

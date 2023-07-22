@@ -44,7 +44,7 @@ function TrueTextColorChange(props) {
     const sectionRed = useRef(false);
 
     useEffect(()=>{
-        readingSpeed.current = props.startReading? 80 : 0
+        readingSpeed.current = props.startReading? 40 : 0;
         let data = {
             scrollDown: false,
             scrollUp: false,
@@ -66,6 +66,7 @@ function TrueTextColorChange(props) {
                     if(squareBoxs[currentLine.current].getBoundingClientRect().left >= rows[currentLine.current].getBoundingClientRect().right){
                         currentLine.current = currentLine.current + 1;
                     }
+                    console.log("readingSpeed.current", readingSpeed.current);
                     tranlateValues.current[currentLine.current]= tranlateValues.current[currentLine.current] + readingSpeed.current;
                     setSetScrollPos((prev) => prev+1);
                 }
@@ -124,7 +125,8 @@ function TrueTextColorChange(props) {
     }, [])
 
     useEffect(()=>{
-        readingSpeed.current = props.startReading? 130 : 0;
+        readingSpeed.current = props.startReading? 70 : 0;
+        console.log("==-=-=-=", props.startReading, "Grey=", props.makeItGrey, "tWhite", props.makeItWhite);
     },[props])
 
     return (
