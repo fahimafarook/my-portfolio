@@ -16,7 +16,7 @@ function AboutMe(props) {
   const count = useRef(0);
   const [childValue, setChildValue] = useState('default');
   const scrollTriggerRef = useRef(null);
-  const scrollEnd = window.innerHeight < window.innerWidth ? '150' : '100' 
+  const scrollEnd = window.innerHeight < window.innerWidth ? '150' : '90' 
 
   const handleChildValue = (value) => {
     setChildValue(value);

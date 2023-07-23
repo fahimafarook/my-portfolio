@@ -6,6 +6,10 @@ import { DeviceContext } from '../../App';
 import linkedinIcon from "../../assets/css/images/linkedin-icon.png"
 import gmailIcon from "../../assets/css/images/gmail-icon.png"
 import { Navigate } from 'react-router-dom';
+import { gsap } from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import leftHand from "../../assets/css/images/blackHand1.png"
+import rightHand from "../../assets/css/images/whiteHand1.png"
 
 function ContactUsSection(props) {
 
@@ -17,40 +21,43 @@ function ContactUsSection(props) {
     const prevScrollPosition = useRef(0);
     const letsWorkRef = useRef(null);
     const [currentTime, setCurrentTime] = useState('');
+    const leftHandRef = useRef(null);
+    const footerIsVisisbe = useRef(false);
+    const footerRef = useRef(false);
+    let count = 0;
 
-    const contactSectionScroll = ()=>{
-      if(isVisible.current){
-        let currentScrollPostion = window.scrollY;
-        let scrollDistance = currentScrollPostion - prevScrollPosition.current  //-*-
-        if(currentScrollPostion > prevScrollPosition.current)// scroll up - page move up
-        {
-            setXaxisScroll1((prev)=>prev+(scrollDistance/5));   //-*-
-            setYaxis((prev)=> prev < 0? prev+(scrollDistance/2) : 0) //-*-
-            
-        }
-        else{ // scroll down 
-            setXaxisScroll1((prev)=>prev+(scrollDistance/5));   //-*-
-            setYaxis((prev)=>prev > -500 ? (prev+(scrollDistance)/2) : -500) //-*-
-        }
-        prevScrollPosition.current =  currentScrollPostion;
+      const contactSectionScroll = ()=>{
+          if(isVisible.current){
+            let currentScrollPostion = window.scrollY;
+            let scrollDistance = currentScrollPostion - prevScrollPosition.current  //-*-
+            if(currentScrollPostion > prevScrollPosition.current)// scroll up - page move up
+            {
+                setXaxisScroll1((prev)=>prev+(scrollDistance/5));   //-*-
+                setYaxis((prev)=> prev < 0? prev+(scrollDistance/2) : 0) //-*-
+                
+            }
+            else{ // scroll down 
+                setXaxisScroll1((prev)=>prev+(scrollDistance/5));   //-*-
+                setYaxis((prev)=>prev > -500 ? (prev+(scrollDistance)/2) : -500) //-*-
+            }
+            prevScrollPosition.current =  currentScrollPostion;
+          }
+          else{
+            setXaxisScroll1(0);
+            setYaxis(-500); //-*-
+          }
       }
-      else{
-        setXaxisScroll1(0);
-        setYaxis(-500); //-*-
+
+      const NavigateToLinkedin =()=>{
+        window.open('https://www.linkedin.com/in/fahima-farook/');
       }
-  }
 
-  const NavigateToLinkedin =()=>{
-    window.open('https://www.linkedin.com/in/fahima-farook/');
-  }
-
-  const openMailBox = ()=>{
-    window.open("mailto:fahimafarook05@gmail.com?subject=lets build the big thing! &body= Hey pal,%0D%0A%0D%0A I would like to enquire about ....");
-  }
+      const openMailBox = ()=>{
+        window.open("mailto:fahimafarook05@gmail.com?subject=lets build the big thing! &body= Hey pal,%0D%0A%0D%0A I would like to enquire about ....");
+      }
 
  
-    useEffect(()=>{
-
+      useEffect(()=>{
       const interval = setInterval(() => {
         const now = new Date();
         const options = { timeZone: 'Asia/Kolkata', hour: 'numeric', minute: 'numeric' };
@@ -58,27 +65,42 @@ function ContactUsSection(props) {
         setCurrentTime(timeString);
       }, 1000);
       
-      const performAutoScroll = () => {               // -*-
+      const performAutoScroll = () => {            
         contactUsButtonEle.scrollIntoView(true);
       }
 
-
         window.addEventListener('scroll', contactSectionScroll);
-        // window.addEventListener('scroll', performAutoScroll); // -*-
-        const observer = new IntersectionObserver((entries) => {
+        const observer1 = new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
+            console.log(entry);
             if (entry.isIntersecting) {
               isVisible.current = true;
             } else {
               isVisible.current = false;
+              
+            }
+          });
+        })
+
+        const observer2 = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            console.log(entry);
+            if (entry.isIntersecting) {
+              footerIsVisisbe.current = true;
+            } 
+            else{
+              footerIsVisisbe.current = false;
             }
           });
         })
        
 
         if (letsWorkRef.current) {
-            observer.observe(letsWorkRef.current);
-        
+            observer1.observe(letsWorkRef.current);
+        }
+
+        if(footerRef.current){
+          observer2.observe(footerRef.current);
         }
 
         const contactUsButtonEle = document.getElementsByClassName('contact-us-button')[0]; // -*-
@@ -87,43 +109,43 @@ function ContactUsSection(props) {
             window.removeEventListener('scroll', contactSectionScroll);
             // window.removeEventListener('scroll', performAutoScroll); // -*-
             if (letsWorkRef.current) {
-                observer.unobserve(letsWorkRef.current);
+                observer1.unobserve(letsWorkRef.current);
               }
+            if(footerRef.current){
+              observer2.unobserve(footerRef.current);
+            }
             };
     },[])
 
+
     return (
         <div className={`contact-section-container`} style ={{transform: `translateY(${yaxis}px)`}}>
-        <div className='pears-bg'>
-        {/* <div className={`contact-section-container`}> */}
-        <div className="row justify-content-end mt-5"> {/* =0= */}
-            <div ref={letsWorkRef} className={`lets-work-on ${deviceName=="phone"? "lets-work-on-mobile-font":""} ${isVisible.current ? 'lets-work-on-visible' : ''} col-12 col-md-12 justify-content-end`} >let's work on your project</div>
+
+          <div className="row justify-content-end mt-5"> 
+              <div ref={letsWorkRef} className={`lets-work-on ${deviceName=="phone"? "lets-work-on-mobile-font":""} ${isVisible.current ? 'lets-work-on-visible' : ''} col-12 col-md-12 justify-content-end`} >let's work on your project</div>
           </div>
-            <div className={`parent-send-email`} onClick={openMailBox}>
-           
-              <div className={`send-me-email col-9 col-md-8 ${deviceName=="phone"? "send-me-email-mobile-font":""}`}>
-                <div className = "effect2"></div>
-                <div className='send-email-text'>send me an email</div>
-                {/* <div className='random-text'>unite</div> */}
-              </div>
-              <div className={`email-arrow col-2`} />
+          <div className="row hands">
+            <img className={`left-hand col-6  ${footerIsVisisbe.current ? 'left-hand-animate' : ''}`} src={leftHand}></img>
+            <img className={`right-hand col-6  ${footerIsVisisbe.current ? 'right-hand-animate' : ''}`} src={rightHand}></img>
+          </div>
+          <div className = {`boom ${footerIsVisisbe.current ? 'boom-effect' : ''}`}></div>
+          <pre onClick={openMailBox} className = {`send-email ${footerIsVisisbe.current ? 'pop-send-email' : ''}`}>{` let's  talk` }</pre>
+
+          <div  ref={footerRef} className={`footer row ${deviceName=="phone"? "footer-mobile-font":""} justify-content-between`}>
+            <div className='time-parent col-2'>
+              <div className='loacal-time-text'>local time</div>
+              <div className='loacal-time'>{currentTime}</div>
             </div>
-            <div className={`footer row ${deviceName=="phone"? "footer-mobile-font":""} justify-content-between`}>
-              <div className='time-parent col-2'>
-                <div className='loacal-time-text'>local time</div>
-                <div className='loacal-time'>{currentTime}</div>
-              </div>
-              <div id='contactUs' className='footer-contact col-7 col-md-6 row justify-content-around h-50 align-item-bottom'>
-                  <div className={`linkedin col-2 col-md-2`} onClick={NavigateToLinkedin}>
-                    {deviceName === "phone" ? <img className='footer-icon' src={linkedinIcon} /> : "Linkedin"}
-                  </div>
-                  <div className='mail-id col-2 col-md-6' onClick={openMailBox}>
-                    {deviceName === "phone" ? <img className='footer-icon' src={gmailIcon} /> : "fahimafarook05@gmail.com"}
-                  </div>
-                  <div className='code-by col-6 col-md-3'>code by fahima</div>
-              </div>
+            <div id='contactUs' className='footer-contact col-7 col-md-6 row justify-content-around h-50 align-item-bottom'>
+                <div className={`linkedin col-2 col-md-2`} onClick={NavigateToLinkedin}>
+                  {deviceName === "phone" ? <img className='footer-icon' src={linkedinIcon} /> : "Linkedin"}
+                </div>
+                <div className='mail-id col-2 col-md-6' onClick={openMailBox}>
+                  {deviceName === "phone" ? <img className='footer-icon' src={gmailIcon} /> : "fahimafarook05@gmail.com"}
+                </div>
+                <div className='code-by col-6 col-md-3'>code by fahima</div>
             </div>
-            </div>
+          </div>
         </div>
     );
 }

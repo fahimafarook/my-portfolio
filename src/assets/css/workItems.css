@@ -50,6 +50,7 @@
   transition:all 5s ease;
 }
 
+
 .is-visible{
     animation-name: fadeInUp;
     animation-duration: 2s;

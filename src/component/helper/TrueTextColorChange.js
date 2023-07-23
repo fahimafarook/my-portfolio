@@ -44,7 +44,13 @@ function TrueTextColorChange(props) {
     const sectionRed = useRef(false);
 
     useEffect(()=>{
+        if(window.innerWidth < 768)
+        {
         readingSpeed.current = props.startReading? 40 : 0;
+        }
+        else{
+            readingSpeed.current = props.startReading? 70 : 0;
+        }
         let data = {
             scrollDown: false,
             scrollUp: false,
@@ -125,8 +131,13 @@ function TrueTextColorChange(props) {
     }, [])
 
     useEffect(()=>{
-        readingSpeed.current = props.startReading? 70 : 0;
-        console.log("==-=-=-=", props.startReading, "Grey=", props.makeItGrey, "tWhite", props.makeItWhite);
+        if(window.innerWidth < 768)
+        {
+        readingSpeed.current = props.startReading? 40 : 0;
+        }
+        else{
+            readingSpeed.current = props.startReading? 85 : 0;
+        }
     },[props])
 
     return (
@@ -139,7 +150,6 @@ function TrueTextColorChange(props) {
                 </div>
             </div>
             ))}
-            {}
         </div>
     );
 }

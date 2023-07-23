@@ -33,7 +33,7 @@ function TextZoomOut() {
             trigger: ".text-zoomout-section",
             start: "top top",
             pin: true,
-            end: `+=150%`,
+            end: `+=${scrollEnd}%`,
              onEnter: () => {
               // console.log("on Nter1--------------");
               document.getElementsByClassName("text-zoomout-section")[0].style.backgroundColor = "white"; 
@@ -92,11 +92,11 @@ function TextZoomOut() {
         <div id="stars2"></div> */}
        
          <div className='text-zoomout-section'>
-            <Parallax scale={[1, 0.55]} speed ={5} >
-                <div className='scale-text1'>u think it</div>
+            <Parallax scale={[1, 0.55]} speed ={5}>
+                <div className='scale-text1'>you think it</div>
             </Parallax>
 
-           <Parallax scale={[0.5, 1.2]} speed ={5} >
+           <Parallax scale={[0.5, 1.1]} speed ={5} >
               <div className='scale-text2'>we make it</div> 
             </Parallax>
            </div>

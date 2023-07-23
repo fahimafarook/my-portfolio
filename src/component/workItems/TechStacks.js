@@ -12,6 +12,8 @@ import spring from "../../assets/css/images/springboot.png"
 import aws from "../../assets/css/images/aws.png"
 import wordpress from "../../assets/css/images/wordpress.png"
 import BgColorButton from '../helper/BgColorButton'
+import { useParallax } from 'react-scroll-parallax';
+import { Parallax } from 'react-scroll-parallax';
 
 
 const initialCurve = 50;
@@ -22,6 +24,7 @@ function TechStacks() {
     const [xaxisScroll1, setXaxisScroll1] =  useState(0);
     const [xaxisScroll2, setXaxisScroll2] =  useState(0);
     const [curveSize, setCurveSize] = useState(50);
+    const [loaded, setLoaded] = useState(false);
 
     const isVisibleRef = useRef(false);
     const containerRef = useRef(null);
@@ -61,12 +64,12 @@ function TechStacks() {
 
                 if(currentScrollPostion > prevScrollPosition.current)
                 {
-                    setXaxisScroll1((prev)=>prev+0.5);
-                    setXaxisScroll2((prev)=>prev-0.5);
+                    setXaxisScroll1((prev)=> prev < window.innerWidth / 8 ? prev+0.75 : prev);
+                    setXaxisScroll2((prev)=> (-1 * prev) < window.innerWidth / 8 ? prev-0.75 : prev);
                 }
                 else{
-                    setXaxisScroll1((prev)=>prev-0.5);
-                    setXaxisScroll2((prev)=>prev+0.5);
+                    setXaxisScroll1((prev)=> (-1 * prev) < window.innerWidth / 8 ? prev-0.75 : prev);
+                    setXaxisScroll2((prev)=> prev < window.innerWidth / 8 ? prev+0.75 : prev);
                 }
                 prevScrollPosition.current =  currentScrollPostion;
 
@@ -88,6 +91,8 @@ function TechStacks() {
             observer.observe(containerRef.current);
         }
 
+        setLoaded(true);
+
         return () => {
             window.removeEventListener('scroll', techStacksOnScroll);
             if (containerRef.current) {
@@ -97,24 +102,39 @@ function TechStacks() {
     },[])
     return (
     <div id = "work" className="work-item-section w-25pc h-1by1 pattern-grid-md yellow-darker bg-yellow">
-       
-        
-        <div className={`tech-stack-header ${isVisibleRef.current? 'is-visible' : ''} `}>we can help you with</div>
-        <div className='stack-parent container-fluid'>
+        <div className={`tech-stack-header ${isVisibleRef.current? 'is-visible' : ''} `}> we can help you with</div>
+        <div className='stack-parent container-fluid'  style= { window.innerWidth > 768 ? {transform: `rotate(${xaxisScroll1 >= 0 ? Math.min(xaxisScroll1/20, 4) : Math.max(xaxisScroll1/20, -4)}deg)`} : {}}>
             <hr className='ruller'></hr>
             <div ref={containerRef} className = "row-1 row justify-content-center h-40 align-top" style={{left: "0px", transform: `translate(${window.innerWidth < 768 ? 0 : xaxisScroll1}px, 0px) translate3d(0px, 0px, 0px)`}}>
-                {
+                { 
                     techContent1.map((content, index) => (
                         <div className = {`image-background col-4 col-md-2 key=${index}`} style={{backgroundColor : ""}}>
-                            <img className = "imageThing img-fluid"  src={content}></img>
+                           {window.innerWidth >= 768 && <img className = "imageThing img-fluid"  src={content}></img>}
+
+                            {window.innerWidth < 768 && <img className = "imageThing img-fluid"  src={content} style={{transform: `scale(${loaded ? 
+                                    (document.getElementsByClassName('imageThing')[index].getBoundingClientRect().top < (window.innerHeight/2) && document.getElementsByClassName('imageThing')[index].getBoundingClientRect().bottom > (window.innerHeight/2)) ? "1.1" : "0.9"
+                                    : "1"})`, 
+                                    opacity:`${loaded ? 
+                                        (document.getElementsByClassName('imageThing')[index].getBoundingClientRect().top < (window.innerHeight/2) && document.getElementsByClassName('imageThing')[index].getBoundingClientRect().bottom > (window.innerHeight/2)) ? "1" : "0.75"
+                                        : "1"}`
+                                        }}></img>}
                         </div>
+                       
                     ))
                 }
                 { window.innerWidth < 768 && 
-
+                
                     techContent2.map((content, index) => (
-                        <div className = {`image-background col-4 col-md-2 key=${index}`} style={{backgroundColor : ""}}>
-                            <img className = "imageThing img-fluid"  src={content}></img>
+                        <div className = {`image-background col-4 col-md-2 key=${5 + index}`} style={{backgroundColor : ""}}>
+                            {/* <img className = "imageThing img-fluid"  src={content}></img> */}
+
+                            <img className = "imageThing img-fluid"  src={content} style={{transform: `scale(${loaded ? 
+                                    (document.getElementsByClassName('imageThing')[5 + index].getBoundingClientRect().top < (window.innerHeight/2) && document.getElementsByClassName('imageThing')[5 + index].getBoundingClientRect().bottom > (window.innerHeight/2)) ?"1.1" : "0.9"
+                                    : "1"})`, 
+                                    opacity:`${loaded ? 
+                                        (document.getElementsByClassName('imageThing')[5 + index].getBoundingClientRect().top < (window.innerHeight/2) && document.getElementsByClassName('imageThing')[5 + index].getBoundingClientRect().bottom > (window.innerHeight/2)) ? "1" : "0.75"
+                                        : "1"}`
+                                        }}></img>
                         </div>
                     ))
                 }
