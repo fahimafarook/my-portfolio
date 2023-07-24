@@ -103,7 +103,7 @@ function TechStacks() {
     return (
     <div id = "work" className="work-item-section w-25pc h-1by1 pattern-grid-md yellow-darker bg-yellow">
         <div className={`tech-stack-header ${isVisibleRef.current? 'is-visible' : ''} `}> we can help you with</div>
-        <div className='stack-parent container-fluid'  style= { window.innerWidth > 768 ? {transform: `rotate(${xaxisScroll1 >= 0 ? Math.min(xaxisScroll1/20, 4) : Math.max(xaxisScroll1/20, -4)}deg)`} : {}}>
+        <div className='stack-parent container-fluid'  style= { window.innerWidth > 768 ? {transform: `rotate(${xaxisScroll1 >= 0 ? Math.min(xaxisScroll1/20, 5) : Math.max(xaxisScroll1/20, -5)}deg)`} : {}}>
             <hr className='ruller'></hr>
             <div ref={containerRef} className = "row-1 row justify-content-center h-40 align-top" style={{left: "0px", transform: `translate(${window.innerWidth < 768 ? 0 : xaxisScroll1}px, 0px) translate3d(0px, 0px, 0px)`}}>
                 { 
