@@ -35,7 +35,7 @@ function ProfilePage() {
             <div className='top-left-text col-4 col-md-1 justify-content-start'></div>
             {(deviceName === "tab" || deviceName === "laptop") && <div className = "locatedAt">
                 <pre className='located-at-text'>{`located at 
-coimbatore ♥︎  India
+coimbatore  ♥  India
                 `}</pre>
             </div>}
             {deviceName == "phone" && <div className = "mobile-locatedAt">

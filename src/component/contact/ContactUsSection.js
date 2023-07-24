@@ -8,8 +8,8 @@ import gmailIcon from "../../assets/css/images/gmail-icon.png"
 import { Navigate } from 'react-router-dom';
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import leftHand from "../../assets/css/images/blackHand1.png"
-import rightHand from "../../assets/css/images/whiteHand1.png"
+import leftHand from "../../assets/css/images/blackHand4.svg"
+import rightHand from "../../assets/css/images/whiteHand3.svg"
 
 function ContactUsSection(props) {
 
@@ -125,8 +125,8 @@ function ContactUsSection(props) {
               <div ref={letsWorkRef} className={`lets-work-on ${deviceName=="phone"? "lets-work-on-mobile-font":""} ${isVisible.current ? 'lets-work-on-visible' : ''} col-12 col-md-12 justify-content-end`} >let's work on your project</div>
           </div>
           <div className="row hands">
-            <img className={`left-hand col-6  ${footerIsVisisbe.current ? 'left-hand-animate' : ''}`} src={leftHand}></img>
-            <img className={`right-hand col-6  ${footerIsVisisbe.current ? 'right-hand-animate' : ''}`} src={rightHand}></img>
+            <img className={`left-hand col-6  ${footerIsVisisbe.current ? 'left-hand-animate' : ''}` } style={{backgroundColor: "white", padding:"0"}} src={leftHand}></img>
+            <img className={`right-hand col-6  ${footerIsVisisbe.current ? 'right-hand-animate' : ''}`} style={{backgroundColor: "white", padding:"0"}} src={rightHand}></img>
           </div>
           <div className = {`boom ${footerIsVisisbe.current ? 'boom-effect' : ''}`}></div>
           <pre onClick={openMailBox} className = {`send-email ${footerIsVisisbe.current ? 'pop-send-email' : ''}`}>{` let's  talk` }</pre>
