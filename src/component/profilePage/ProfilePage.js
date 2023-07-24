@@ -44,6 +44,11 @@ coimbatore ♥︎  India
             <div className='running-name-box'>
                  <div className = "running-name">fahima farook . fahima farook . fahima farook . fahima farook . fahima farook .</div>
             </div>
+            <div class="scroll-down">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
                 <div className = "freelancer col-10 justify-content-end col-md-4">freelance developer</div>
              {/* {showSlideAndHide && <SlideAndHide onFinish={handleSlideAndHideFinish} />} */}
         </div>
