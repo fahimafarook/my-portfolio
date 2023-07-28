@@ -42,14 +42,14 @@ coimbatore  ♥  India
                 <div className = "mobile-located-at-text">{`India`}</div>
             </div>}
             <div className='running-name-box'>
-                 <div className = "running-name">fahima farook . fahima farook . fahima farook . fahima farook . fahima farook .</div>
+                 <div className = "running-name">codespice . codespice . codespice . codespice . codespice</div>
             </div>
             <div class="scroll-down">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-                <div className = "freelancer col-10 justify-content-end col-md-4">freelance developer</div>
+                <div className = "freelancer col-10 justify-content-end col-md-4">freelance developers</div>
              {/* {showSlideAndHide && <SlideAndHide onFinish={handleSlideAndHideFinish} />} */}
         </div>
     );

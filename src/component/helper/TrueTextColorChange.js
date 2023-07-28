@@ -14,16 +14,16 @@ function TrueTextColorChange(props) {
     //   "into a tech solution. Come on lets build the big thing !!"]
 
     const laptop_lines = ["__",
-        "Hi, I'm Fahima!", 
-        "I can help you in creating dynamic and",
+        "Hi, it's Fahima and Arun!", 
+        "we can help you in creating dynamic and",
         "impressive websites tailored to your unique needs.", 
         "We can transform your ideas and requirements into", 
         "a powerful tech solution. From designing your website",
-        "to implementing your vision, I got you covered!!"]
+        "to implementing your vision, we got you covered!!"]
 
     const mobile_lines = ["__",
-        "Hi, I'm Fahima!", 
-        "I can help you in",
+        "Hi, it's Fahima and Arun!", 
+        "we can help you in",
         "creating dynamic and",
         "impressive websites",
         "tailored to your unique needs.", 
@@ -32,7 +32,7 @@ function TrueTextColorChange(props) {
         "a powerful tech solution.",
         "From designing your website",
         "to implementing your vision,",
-        "I got you covered!!"]
+        "we got you covered!!"]
 
     const lines = window.innerWidth <= 768 ? mobile_lines : laptop_lines;
     

@@ -143,7 +143,7 @@ function ContactUsSection(props) {
                 <div className='mail-id col-2 col-md-6' onClick={openMailBox}>
                   {deviceName === "phone" ? <img className='footer-icon' src={gmailIcon} /> : "fahimafarook05@gmail.com"}
                 </div>
-                <div className='code-by col-6 col-md-3'>code by fahima</div>
+                <div className='code-by col-6 col-md-3'>+91 8667790191</div>
             </div>
           </div>
         </div>

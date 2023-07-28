@@ -430,7 +430,7 @@
   position: relative;
   font-weight: 200;
   font-size: 1000%;
-  color: rgb(198, 109, 0);
+  color: rgb(255, 255, 255);
   white-space: nowrap;
   animation: name-slide 15s infinite;
   justify-content: center;
