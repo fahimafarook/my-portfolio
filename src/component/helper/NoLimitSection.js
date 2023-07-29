@@ -175,54 +175,56 @@ function NoLimitSection() {
 
 
     return (
-        <div style={{ height: "100vh"}}>
+        <div style={{ minHeight: "100vh"}}>
         <div className='no-limit-section'>
-            <div className='key-board'> 
-            <div className='board-row row-1'> 
-                    <div className='keys' ref={useParallax(parallaxConfig['topLeft']).ref}><div className ='key-text'>q</div></div>
-                    <div className='keys' ref={useParallax(parallaxConfig['topMid']).ref}><div className ='key-text'>w</div></div>
-                    <div className='keys' ref={useParallax(parallaxConfig['topLeft']).ref}><div className ='key-text'>e</div></div>
+            <div className='limit-section'>
+                <div className='key-board'> 
+                <div className='board-row row-1'> 
+                        <div className='keys' ref={useParallax(parallaxConfig['topLeft']).ref}><div className ='key-text'>q</div></div>
+                        <div className='keys' ref={useParallax(parallaxConfig['topMid']).ref}><div className ='key-text'>w</div></div>
+                        <div className='keys' ref={useParallax(parallaxConfig['topLeft']).ref}><div className ='key-text'>e</div></div>
 
-                    <div className='keys' ref={useParallax(parallaxConfig['topRight']).ref}><div className ='key-text'>r</div></div>
-                    <div className='keys' ref={useParallax(parallaxConfig['letterT']).ref}><div className ='key-text'>t</div></div> {/* */}
-                    <div className='keys next-animae-trigger' ref={useParallax(parallaxConfig['bottomMid']).ref}><div className ='key-text'>y</div></div>
+                        <div className='keys' ref={useParallax(parallaxConfig['topRight']).ref}><div className ='key-text'>r</div></div>
+                        <div className='keys' ref={useParallax(parallaxConfig['letterT']).ref}><div className ='key-text'>t</div></div> {/* */}
+                        <div className='keys next-animae-trigger' ref={useParallax(parallaxConfig['bottomMid']).ref}><div className ='key-text'>y</div></div>
 
-                    <div className='keys' ref={useParallax(parallaxConfig['topRight']).ref}><div className ='key-text'>u</div></div>
-                    <div className='keys' ref={useParallax(parallaxConfig['letterI']).ref}><div className ='key-text'>i</div></div> {/* */}
-                    <div className='keys' ref={useParallax(parallaxConfig['letterO']).ref}><div className ='key-text'>o</div></div> {/* */}
+                        <div className='keys' ref={useParallax(parallaxConfig['topRight']).ref}><div className ='key-text'>u</div></div>
+                        <div className='keys' ref={useParallax(parallaxConfig['letterI']).ref}><div className ='key-text'>i</div></div> {/* */}
+                        <div className='keys' ref={useParallax(parallaxConfig['letterO']).ref}><div className ='key-text'>o</div></div> {/* */}
 
-                    <div className='keys' ref={useParallax(parallaxConfig['topRight']).ref}><div className ='key-text'>p</div></div>
-                    
+                        <div className='keys' ref={useParallax(parallaxConfig['topRight']).ref}><div className ='key-text'>p</div></div>
+                        
+                    </div>
+                    <div className='board-row row-2'>
+                        <div className='keys' ref={useParallax(parallaxConfig['midLeft']).ref}><div className ='key-text'>a</div></div>
+                        <div className='keys' ref={useParallax(parallaxConfig['letterS']).ref}><div className ='key-text'>s</div></div> {/* */}
+                        <div className='keys' ref={useParallax(parallaxConfig['bottomMid']).ref}><div className ='key-text'>d</div></div>
+
+                        <div className='keys' ref={useParallax(parallaxConfig['topMid']).ref}><div className ='key-text'>f</div></div>
+                        <div className='keys' ref={useParallax(parallaxConfig['topLeft']).ref} ><div className ='key-text'>g</div></div>
+                        <div className='keys' ref={useParallax(parallaxConfig['midright']).ref}><div className ='key-text'>h</div></div>
+
+                        <div className='keys' ref={useParallax(parallaxConfig['topMid']).ref}><div className ='key-text'>j</div></div>
+                        <div className='keys' ref={useParallax(parallaxConfig['bottomRight']).ref}><div className ='key-text'>k</div></div>
+                        <div className='keys' ref={useParallax(parallaxConfig['letterL']).ref}><div className ='key-text'>l</div></div> {/* */}
+                    </div>
+                    <div className='board-row row-3'> 
+                        <div className='keys' ref={useParallax(parallaxConfig['bottomLeft']).ref} ><div className ='key-text'>z</div></div>
+                        <div className='keys' ref={useParallax(parallaxConfig['bottomRight']).ref} ><div className ='key-text'>x</div></div>
+                        <div className='keys' ref={useParallax(parallaxConfig['midLeft']).ref} ><div className ='key-text'>c</div></div>
+
+                        <div className='keys' ref={useParallax(parallaxConfig['topRight']).ref} ><div className ='key-text'>v</div></div>
+                        <div className='keys' ref={useParallax(parallaxConfig['bottomRight']).ref} ><div className ='key-text'>b</div></div>
+                        <div className='keys' ref={useParallax(parallaxConfig['letterN']).ref}><div className ='key-text'>n</div></div> {/* */}
+
+                        <div className='keys' ref={useParallax(parallaxConfig['letterM']).ref} ><div className ='key-text'>m</div></div> {/* */}
+
+                        <div className='enter-key' ref={useParallax(parallaxConfig['letterEye']).ref} ><div className ='key-text'>!</div></div>
+                        
+                    </div> 
                 </div>
-                <div className='board-row row-2'>
-                    <div className='keys' ref={useParallax(parallaxConfig['midLeft']).ref}><div className ='key-text'>a</div></div>
-                    <div className='keys' ref={useParallax(parallaxConfig['letterS']).ref}><div className ='key-text'>s</div></div> {/* */}
-                    <div className='keys' ref={useParallax(parallaxConfig['bottomMid']).ref}><div className ='key-text'>d</div></div>
-
-                    <div className='keys' ref={useParallax(parallaxConfig['topMid']).ref}><div className ='key-text'>f</div></div>
-                    <div className='keys' ref={useParallax(parallaxConfig['topLeft']).ref} ><div className ='key-text'>g</div></div>
-                    <div className='keys' ref={useParallax(parallaxConfig['midright']).ref}><div className ='key-text'>h</div></div>
-
-                    <div className='keys' ref={useParallax(parallaxConfig['topMid']).ref}><div className ='key-text'>j</div></div>
-                    <div className='keys' ref={useParallax(parallaxConfig['bottomRight']).ref}><div className ='key-text'>k</div></div>
-                    <div className='keys' ref={useParallax(parallaxConfig['letterL']).ref}><div className ='key-text'>l</div></div> {/* */}
-                </div>
-                <div className='board-row row-3'> 
-                    <div className='keys' ref={useParallax(parallaxConfig['bottomLeft']).ref} ><div className ='key-text'>z</div></div>
-                    <div className='keys' ref={useParallax(parallaxConfig['bottomRight']).ref} ><div className ='key-text'>x</div></div>
-                    <div className='keys' ref={useParallax(parallaxConfig['midLeft']).ref} ><div className ='key-text'>c</div></div>
-
-                    <div className='keys' ref={useParallax(parallaxConfig['topRight']).ref} ><div className ='key-text'>v</div></div>
-                    <div className='keys' ref={useParallax(parallaxConfig['bottomRight']).ref} ><div className ='key-text'>b</div></div>
-                    <div className='keys' ref={useParallax(parallaxConfig['letterN']).ref}><div className ='key-text'>n</div></div> {/* */}
-
-                    <div className='keys' ref={useParallax(parallaxConfig['letterM']).ref} ><div className ='key-text'>m</div></div> {/* */}
-
-                    <div className='enter-key' ref={useParallax(parallaxConfig['letterEye']).ref} ><div className ='key-text'>!</div></div>
-                    
-                </div> 
+                <hr ref = {triggerEle} className='trigger-line'></hr>
             </div>
-            <hr ref = {triggerEle} className='trigger-line'></hr>
         </div>
         </div>
     );
