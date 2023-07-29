@@ -175,7 +175,7 @@ function NoLimitSection() {
 
 
     return (
-        <div style={{ minHeight: "100vh"}}>
+        <div style={{ Height: "100vh"}}>
         <div className='no-limit-section'>
             <div className='key-board'> 
             <div className='board-row row-1'> 
