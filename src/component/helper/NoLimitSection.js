@@ -12,6 +12,7 @@ function NoLimitSection() {
     const scrollTrigger1 =useRef(null);
     const vx = window.innerHeight < window.innerWidth ? 'vh' : 'vw' 
     const scrollEnd = window.innerHeight < window.innerWidth ? '200' : '120' 
+    const [testingVar, setTestingVar] = useState(0);
     
     let parallaxConfig = { 
         topLeft: {
@@ -165,6 +166,8 @@ function NoLimitSection() {
                 } else {
                     elementInMiddle.current = false;
                 }
+
+                // setTestingVar((prev)=> prev+1)
               };
           
               window.addEventListener('scroll', handleScroll);
@@ -179,6 +182,7 @@ function NoLimitSection() {
         <div className='no-limit-section'>
             <div className='key-board'> 
             <div className='board-row row-1'> 
+            {testingVar}
                     <div className='keys' ref={useParallax(parallaxConfig['topLeft']).ref}><div className ='key-text'>q</div></div>
                     <div className='keys' ref={useParallax(parallaxConfig['topMid']).ref}><div className ='key-text'>w</div></div>
                     <div className='keys' ref={useParallax(parallaxConfig['topLeft']).ref}><div className ='key-text'>e</div></div>
@@ -223,7 +227,6 @@ function NoLimitSection() {
                 </div> 
             </div>
             <hr ref = {triggerEle} className='trigger-line'></hr>
-            
         </div>
         </div>
     );
