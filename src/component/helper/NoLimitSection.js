@@ -13,7 +13,7 @@ function NoLimitSection() {
     const vx = window.innerHeight < window.innerWidth ? 'vh' : 'vw' 
     const scrollEnd = window.innerHeight < window.innerWidth ? '200' : '120' 
     
-    let parallaxConfig = { 
+    const parallaxConfig = { 
         topLeft: {
             speed: -100,
             translateX: ['0px', '-2000px' ],

@@ -50,7 +50,6 @@ coimbatore  ♥  India
                 <span></span>
             </div>
                 <div className = "freelancer col-10 justify-content-end col-md-4">freelance developers</div>
-             {/* {showSlideAndHide && <SlideAndHide onFinish={handleSlideAndHideFinish} />} */}
         </div>
     );
 }
