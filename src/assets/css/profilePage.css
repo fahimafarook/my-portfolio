@@ -67,7 +67,7 @@
 .profile-page {
     height: 100vh;
     width: auto;
-    background-image: url('./images/5mabw.png');
+    background-image: url('./images/rename.png');
     position: relative;
     background-position: center;
     background-repeat: no-repeat;
@@ -401,6 +401,7 @@
   font-size: x-large ;
   color: white;
   font-family: BebasNeue;
+ 
 }
 
 .slider-button:last-child{  /* =0= */
@@ -437,6 +438,7 @@
   font-family: "BebasNeue";
   -webkit-text-stroke: 3px  rgb(255, 255, 255);
   -webkit-text-fill-color:transparent;
+  
 }
 
 @keyframes name-slide {
@@ -552,7 +554,7 @@
     }
 
     .profile-page {
-      background-image: url('./images/mobile1.png');
+      background-image: url('./images/rename.png');
     }
 
     .slider-button {
@@ -602,4 +604,99 @@
         opacity: 0;
         transform: rotate(45deg) translate(20px,20px);
     }
+}
+
+.Name1{
+  font-family: 'BebasNeue';
+  position: absolute;
+  top:20%;
+  right: 25%;
+  font-size: 550%;
+  color: rgb(186, 182, 182);
+ 
+}
+
+.cirle1{
+  height: 40vh;
+  width: 40vh;
+  /* background-color: blue; */
+  position: absolute;
+  top: 15%;
+  right: 5%;
+  border-radius: 50%;
+  background-image: url('./images/fahima_bw.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.Name2{
+  font-family: 'BebasNeue';
+  position: absolute;
+  top:40%;
+  right: 35%;
+  font-size: 550%;
+  color: rgb(186, 182, 182);
+  font-weight: 10;
+ 
+}
+
+.cirle2{
+  height: 35vh;
+  width: 35vh;
+  /* background-color: blue; */
+  position: absolute;
+  top:33%;
+  right: 25%;
+  border-radius: 50%;
+  background-image: url('./images/ak_bw.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+
+  .Name1{
+    font-family: 'BebasNeue';
+    position: absolute;
+    top:25%;
+    left:10%;
+    font-size: 250%;
+    color: rgb(186, 182, 182);
+   
+  }
+  
+  .cirle1{
+    height: 20vh;
+    width: 20vh;
+    /* background-color: blue; */
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    border-radius: 50%;
+    background-image: url('./images/fahima_bw.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .Name2{
+    font-family: 'BebasNeue';
+    position: absolute;
+    top:40%;
+    left:15%;
+    font-size: 350%;
+    color: rgb(186, 182, 182);
+    font-weight: 10;
+   
+  }
+  
+  .cirle2{
+    height: 20vh;
+    width: 20vh;
+    /* background-color: blue; */
+    position: absolute;
+    top:35%;
+    right: 15%;
+    border-radius: 50%;
+    background-image: url('./images/ak_bw.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
 }

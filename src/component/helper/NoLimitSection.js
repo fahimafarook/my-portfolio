@@ -11,7 +11,7 @@ function NoLimitSection() {
     const count = useRef(0);
     const scrollTrigger1 =useRef(null);
     const vx = window.innerHeight < window.innerWidth ? 'vh' : 'vw' 
-    const scrollEnd = window.innerHeight < window.innerWidth ? '200' : '120' 
+    const scrollEnd = window.innerHeight < window.innerWidth ? '200' : '110' 
     
     const parallaxConfig = { 
         topLeft: {
@@ -20,10 +20,8 @@ function NoLimitSection() {
             translateY: ['0px', '-500px'],
             easing: "easeInQuad",
             scale: [1,1.5],
-            targetElement: triggerEle.current,
-            // disabled: !elementInMiddle.current,
-            // startScroll: 1200,
-            // endScroll: 2000
+            targetElement: triggerEle.current
+
 
         },
         topMid: {
@@ -157,19 +155,9 @@ function NoLimitSection() {
               });
               count.current = count.current + 1;
             }
-
-            const handleScroll = () => {
-                const elementPosition = document.getElementsByClassName('next-animae-trigger')[0]; 
-                if (triggerEle && elementPosition.getBoundingClientRect().top >=  window.innerHeight) {  
-                    elementInMiddle.current = true;
-                } else {
-                    elementInMiddle.current = false;
-                }
-              };
-          
-              window.addEventListener('scroll', handleScroll);
+            
             return () => {
-                window.removeEventListener('scroll', handleScroll);
+               
             };
         }, []);
 
@@ -186,7 +174,7 @@ function NoLimitSection() {
 
                         <div className='keys' ref={useParallax(parallaxConfig['topRight']).ref}><div className ='key-text'>r</div></div>
                         <div className='keys' ref={useParallax(parallaxConfig['letterT']).ref}><div className ='key-text'>t</div></div> {/* */}
-                        <div className='keys next-animae-trigger' ref={useParallax(parallaxConfig['bottomMid']).ref}><div className ='key-text'>y</div></div>
+                        <div className='keys' ref={useParallax(parallaxConfig['bottomMid']).ref}><div className ='key-text'>y</div></div>
 
                         <div className='keys' ref={useParallax(parallaxConfig['topRight']).ref}><div className ='key-text'>u</div></div>
                         <div className='keys' ref={useParallax(parallaxConfig['letterI']).ref}><div className ='key-text'>i</div></div> {/* */}
