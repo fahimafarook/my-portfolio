@@ -50,7 +50,8 @@ function App() {
   useEffect(() => {
     if(showSplashScreen){
       document.body.style.overflow = "hidden";
-      document.getElementById('profilePage').scrollIntoView(); // =0=
+      // document.getElementById('profilePage').scrollIntoView(); // =0=
+      setTimeout(() => document.getElementById('profilePage').scrollIntoView(), 500)
     }
     else{
       resizeHandler(); // =0=

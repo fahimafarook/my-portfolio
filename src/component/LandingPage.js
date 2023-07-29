@@ -17,7 +17,7 @@ function LandingPage(props) {
         <div className="landing-page-container"> {/* -*- */}
             <ProfilePage/>
            
-            <NoLimitSection/>
+            {window.innerWidth > 768 && < NoLimitSection/>}
            
             <AboutMe />
             <TextZoomOut/>
