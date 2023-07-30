@@ -144,12 +144,12 @@
 
   .splash-screen{
     z-index: 11;
-    position: absolute;
     height: 100vh;
     color: white;
     width: 100vw;
     top:0;
     left: 0;
+    position: fixed;
   }
 
   .upper-rect{
