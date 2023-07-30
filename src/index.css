@@ -13,7 +13,7 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1200px) and (min-height: 700px) {
   /* Font sizes for tablets and larger screens */
   html {
     font-size: 20px;

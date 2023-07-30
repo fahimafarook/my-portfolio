@@ -3,6 +3,13 @@
   src: url('./fonts/BebasNeue.woff2') format('woff2')
 }
 
+@font-face {
+  font-family: 'nunito-sans';
+  src: url('./fonts/nunito-sans-latin-800.woff2') format('woff2')
+}
+
+
+
 .mobile-located-at-text{
   position: absolute;
   font-size: 200%;
@@ -24,7 +31,7 @@
     height: 15%;
     background-color: rgb(28, 28, 28);
     position: absolute;
-    top: 50%;
+    top: 40%;
     border-radius: 0 50px 50px 0;
     color: rgb(255, 255, 255);
     text-align: left;
@@ -82,10 +89,10 @@
   position: absolute;
   right:0;
   border-radius: 10px 0 0 10px;
-  height: 5%;
   font-size: xx-large ;
   font-family: BebasNeue;
   animation: wave-effect 5s infinite;
+  height: fit-content;
 }
 
 @keyframes wave-effect {
@@ -119,7 +126,8 @@
     left: 3%;
     top:5%;
     color: rgb(255, 255, 255);
-    font-size: 160%;
+    font-size: 120%;
+    font-family: 'nunito-sans';
 }
 
 .located-at-text{
