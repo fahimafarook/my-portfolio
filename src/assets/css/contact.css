@@ -354,6 +354,7 @@ body{
   flex-direction: row;
   bottom: 0;
   align-items:end;
+
 }
 
 .linkedin{
@@ -529,8 +530,8 @@ body{
   100%{
     color: rgb(128, 127, 127);
     opacity: 1;
-    width: 20vh;
-    height: 20vh;
+    width: 10vmax;
+    height:  10vmax;
     font-size: xx-large;
    
   }
@@ -554,3 +555,18 @@ body{
   }
 
 }
+
+@media (min-width: 1200px) and (max-height: 700px) {
+  .lets-work-on{
+    height: 1px;
+    color: rgb(0, 0, 0);
+    -webkit-text-stroke: 1px  rgb(0, 0, 0);
+    -webkit-text-fill-color: transparent;
+  }
+
+  .lets-work-on-visible{
+    height: 1px;
+    color: rgb(0, 0, 0);
+  }
+}
+
