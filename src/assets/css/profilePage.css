@@ -641,16 +641,6 @@
   background-size: contain;
   background-repeat: no-repeat;
 }
-.Name2{
-  font-family: 'BebasNeue';
-  position: absolute;
-  top:40%;
-  right: 35%;
-  font-size: 550%;
-  color: rgb(186, 182, 182);
-  font-weight: 10;
- 
-}
 
 .cirle2{
   height: 35vh;
@@ -665,6 +655,18 @@
   background-repeat: no-repeat;
 }
 
+.Name2{
+  font-family: 'BebasNeue';
+  position: absolute;
+  top:40%;
+  right: 35%;
+  font-size: 550%;
+  color: rgb(186, 182, 182);
+  font-weight: 10;
+ 
+}
+
+
 @media (max-width: 768px) {
 
   .Name1{
@@ -677,6 +679,18 @@
    
   }
   
+
+  .Name2{
+    font-family: 'BebasNeue';
+    position: absolute;
+    top:40%;
+    left:15%;
+    font-size: 350%;
+    color: rgb(186, 182, 182);
+    font-weight: 10;
+   
+  }
+
   .cirle1{
     height: 20vh;
     width: 20vh;
@@ -688,16 +702,6 @@
     background-image: url('./images/fahima_bw.png');
     background-size: contain;
     background-repeat: no-repeat;
-  }
-  .Name2{
-    font-family: 'BebasNeue';
-    position: absolute;
-    top:40%;
-    left:15%;
-    font-size: 350%;
-    color: rgb(186, 182, 182);
-    font-weight: 10;
-   
   }
   
   .cirle2{
@@ -720,5 +724,15 @@
   .read-more{
     left: 3%;
     font-size:400%;
+  }
+
+  .cirle1{
+    top: 15%;
+    right: 5vw;
+  }
+  
+  .cirle2{
+    top: 30%;
+    right: 20vw;
   }
 }
