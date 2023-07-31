@@ -3,6 +3,13 @@
   src: url('./fonts/BebasNeue.woff2') format('woff2')
 }
 
+@font-face {
+  font-family: 'nunito-sans';
+  src: url('./fonts/nunito-sans-latin-800.woff2') format('woff2')
+}
+
+
+
 .mobile-located-at-text{
   position: absolute;
   font-size: 200%;
@@ -20,11 +27,11 @@
     /* border-top: solid 0.3px rgb(123, 120, 120);
     border-right: solid  0.3px rgb(123, 120, 120);
     border-bottom: solid  0.3px rgb(123, 120, 120); */
-    width: 35%;
-    height: 15%;
+    width: 35vw;
+    height: 15vh;
     background-color: rgb(28, 28, 28);
     position: absolute;
-    top: 50%;
+    top: 40%;
     border-radius: 0 50px 50px 0;
     color: rgb(255, 255, 255);
     text-align: left;
@@ -42,15 +49,29 @@
     animation: backgroundChanges 1s infinite;
     position: absolute;
     content: "";
-    width: 80px;
-    height: 80px;
+    width: 13vh;
+    height: 13vh;
     border-radius: 50%;
-    background-image: url('./images/earth-svgrepo-com.svg');
-    background-size: contain;
-    background-repeat: no-repeat;
     right:5%;
+    background: radial-gradient(circle, white 5%, rgb(149, 221, 25));
     top:10%;
-    background: radial-gradient(circle, white 5%, rgb(149, 221, 25))
+    max-height: 80px;
+    max-width: 80px;
+}
+
+.locatedAt::after{
+  position: absolute;
+  content: "";
+  width: 13vh;
+  height: 13vh;
+  border-radius: 50%;
+  background-image: url('./images/earth-svgrepo-com.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  right:5%;
+  top:10%;
+  max-height: 80px;
+  max-width: 80px;
 }
 
 .mobile-locatedAt{
@@ -82,10 +103,10 @@
   position: absolute;
   right:0;
   border-radius: 10px 0 0 10px;
-  height: 5%;
   font-size: xx-large ;
   font-family: BebasNeue;
   animation: wave-effect 5s infinite;
+  height: fit-content;
 }
 
 @keyframes wave-effect {
@@ -119,7 +140,8 @@
     left: 3%;
     top:5%;
     color: rgb(255, 255, 255);
-    font-size: 160%;
+    font-size: 120%;
+    font-family: 'nunito-sans';
 }
 
 .located-at-text{
@@ -146,18 +168,6 @@
         )
   } }
 
-.locatedAt::after{
-    position: absolute;
-    content: "";
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background-image: url('./images/earth-svgrepo-com.svg');
-    background-size: contain;
-    background-repeat: no-repeat;
-    right:5%;
-    top:10%;
-}
 
 @keyframes sidePopIn-left {
   from{
@@ -388,6 +398,7 @@
   display: flex;
   flex-direction: row;
   z-index: 5;
+  height: fit-content;
 }
 
 .slider-button {
@@ -466,6 +477,8 @@
   align-items: center;
   text-align: center;
 }
+
+
 
 .read-more.visible-down {
   animation: arrowPointerDown 3s;
@@ -698,5 +711,14 @@
     background-image: url('./images/ak_bw.png');
     background-size: contain;
     background-repeat: no-repeat;
+
+}
+}
+
+@media (min-width: 1200px) and (max-height: 700px) {
+
+  .read-more{
+    left: 3%;
+    font-size:400%;
   }
 }

@@ -30,15 +30,20 @@ function ContactUsSection(props) {
           if(isVisible.current){
             let currentScrollPostion = window.scrollY;
             let scrollDistance = currentScrollPostion - prevScrollPosition.current  //-*-
+            let factor = 2;
+            if(window.innerHeight <= 700)
+            {
+              factor = 1.5;
+            }
             if(currentScrollPostion > prevScrollPosition.current)// scroll up - page move up
             {
                 setXaxisScroll1((prev)=>prev+(scrollDistance/5));   //-*-
-                setYaxis((prev)=> prev < 0? prev+(scrollDistance/2) : 0) //-*-
+                setYaxis((prev)=> prev < 0? prev+(scrollDistance/factor) : 0) //-*-
                 
             }
             else{ // scroll down 
                 setXaxisScroll1((prev)=>prev+(scrollDistance/5));   //-*-
-                setYaxis((prev)=>prev > -500 ? (prev+(scrollDistance)/2) : -500) //-*-
+                setYaxis((prev)=>prev > -500 ? (prev+(scrollDistance)/factor) : -500) //-*-
             }
             prevScrollPosition.current =  currentScrollPostion;
           }
@@ -119,13 +124,13 @@ function ContactUsSection(props) {
 
 
     return (
-        <div className={`contact-section-container`} style ={{transform: `translateY(${yaxis}px)`}}>
+        <div className={`contact-section-container`} style ={{transform: `translateY(${footerIsVisisbe.current ? 0 :yaxis}px)`}}>
 
           <div className="row justify-content-end mt-5"> 
               <div ref={letsWorkRef} className={`lets-work-on ${deviceName=="phone"? "lets-work-on-mobile-font":""} ${isVisible.current ? 'lets-work-on-visible' : ''} col-12 col-md-12 justify-content-end`} >let's work on your project</div>
           </div>
           <div className="row hands">
-            <img className={`left-hand col-6  ${footerIsVisisbe.current ? 'left-hand-animate' : ''}` } style={{backgroundColor: "white", padding:"0"}} src={leftHand}></img>
+            <img className={`left-hand col-6 ${footerIsVisisbe.current ? 'left-hand-animate' : ''}` } style={{backgroundColor: "white", padding:"0"}} src={leftHand}></img>
             <img className={`right-hand col-6  ${footerIsVisisbe.current ? 'right-hand-animate' : ''}`} style={{backgroundColor: "white", padding:"0"}} src={rightHand}></img>
           </div>
           <div className = {`boom ${footerIsVisisbe.current ? 'boom-effect' : ''}`}></div>
