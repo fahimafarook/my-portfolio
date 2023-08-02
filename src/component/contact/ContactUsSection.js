@@ -124,8 +124,7 @@ function ContactUsSection(props) {
 
 
     return (
-        <div className={`contact-section-container`} style ={{transform: `translateY(${footerIsVisisbe.current ? 0 :0}px)`}}>
-
+        <div className={`contact-section-container`}>
           <div className="row justify-content-end mt-5"> 
               <div ref={letsWorkRef} className={`lets-work-on ${deviceName=="phone"? "lets-work-on-mobile-font":""} ${isVisible.current ? 'lets-work-on-visible' : ''} col-12 col-md-12 justify-content-end`} >let's work on your project</div>
           </div>
