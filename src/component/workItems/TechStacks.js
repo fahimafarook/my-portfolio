@@ -152,8 +152,9 @@ function TechStacks() {
                     }
                 </div>
             }
-        </div>
         <hr className='ruller'></hr>
+        </div>
+       
         <div className = "tub-parent">
             <div className='curved-frame' style={{borderRadius:`0 0 ${curveSize}% ${curveSize}%`}} />
         </div>

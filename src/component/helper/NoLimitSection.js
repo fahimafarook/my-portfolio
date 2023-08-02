@@ -222,6 +222,10 @@ function NoLimitSection() {
                     
                 </div> 
             </div>
+            <div class="scroll-down">
+                <span></span>
+                <span></span>
+            </div>
             <hr ref = {triggerEle} className='trigger-line'></hr>
             
         </div>
