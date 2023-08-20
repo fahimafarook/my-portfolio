@@ -42,9 +42,9 @@ coimbatore  ♥  India
                 <div className = "mobile-located-at-text">{`India`}</div>
             </div>}
             {/* <div className='Name1'>Fahima</div> */}
-            <div className='cirle1'></div>
+            {/* <div className='cirle1'></div> */}
             {/* <div className='Name2'>Arun</div> */}
-            <div className='cirle2'></div>
+            {/* <div className='cirle2'></div> */}
             <div className='running-name-box'>
                  <div className = "running-name">codespice . codespice . codespice . codespice . codespice</div>
             </div>
